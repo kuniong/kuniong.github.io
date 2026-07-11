@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Inventory optimization at scale — Hung Q. Nguyen</title>
+  <meta name="description" content="A heterogeneous portfolio of items creates a portfolio-level decision: which model should govern each item when the total inventory budget is limited?">
+  <meta name="author" content="Hung Q. Nguyen">
+  <meta name="theme-color" content="#ffffff">
+  <meta property="og:title" content="Inventory optimization at scale — Hung Q. Nguyen">
+  <meta property="og:description" content="A heterogeneous portfolio of items creates a portfolio-level decision: which model should govern each item when the total inventory budget is limited?">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://kuniong.github.io/work/inventory-optimization/">
+  <link rel="canonical" href="https://kuniong.github.io/work/inventory-optimization/">
+  <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/assets/css/main.css">
+</head>
+<body class="">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a class="brand" href="/">Hung Q. Nguyen</a>
+      <button class="menu-button" aria-label="Open navigation" aria-expanded="false"><span></span></button>
+      <nav class="nav-links" aria-label="Primary navigation">
+        <a href="/" >Home</a>
+        <a href="/research/" >Research</a>
+        <a href="/publications/" >Publications</a>
+        <a href="/projects/" aria-current="page">Projects</a>
+        <a href="/teaching/" >Teaching</a>
+        <a href="/cv/" >CV</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="case-hero"><div class="container"><div class="case-type">Applied research · Manufacturing & inventory</div><h1>Inventory optimization at scale</h1><p class="case-lead">A heterogeneous portfolio of items creates a portfolio-level decision: which model should govern each item when the total inventory budget is limited?</p><div class="case-meta"><span>Industrial research + public conference paper</span><span>Multi-item inventory</span><span>Scalable optimization</span></div></div></section>
+    <section><div class="container case-body"><article class="case-copy">
+          <h2>Context</h2><p>Large inventory systems contain items with different demand behavior, lead times, costs, and service requirements. A single safety-stock rule can be too crude, but selecting a bespoke model for every item can create a difficult combinatorial problem.</p>
+          <h2>Decision challenge</h2><p>The item-level decision and portfolio-level budget are coupled. Improving one item’s service level consumes resources that are unavailable elsewhere, so model selection itself becomes part of the optimization.</p>
+          <h2>My contribution</h2><p>I worked on mathematical formulation, scalable optimization, and evaluation of a framework that selects safety-stock logic across many items under a shared budget constraint.</p>
+          <h2>Approach</h2><ul><li>Represent candidate inventory models and their item-level consequences.</li><li>Link model choice to portfolio-level resource constraints.</li><li>Design a computationally scalable selection framework.</li><li>Evaluate trade-offs between cost, availability, and heterogeneous item behavior.</li></ul>
+          <h2>Public artifact</h2><p>A methodological version of the work was presented at IEEE CASE 2025. Industrial data, client context, implementation details, and non-public performance results remain omitted.</p>
+        </article><aside class="case-aside">
+          <div class="aside-card"><h3>Methods</h3><ul><li>Inventory modeling</li><li>Model selection</li><li>Budget constraints</li><li>Scalable optimization</li></ul></div>
+          <div class="aside-card"><h3>Public paper</h3><p>“Safety Stock Model Selection Optimization for Budget-Constrained Multi-Item Inventory Management: A Scalable Framework,” IEEE CASE 2025.</p></div>
+          <div class="aside-card"><h3>Disclosure</h3><p>The case study combines a public method description with a deliberately generalized industrial context.</p></div>
+        </aside></div></section>
+    </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <span>© <span data-current-year></span> Hung Q. Nguyen</span>
+      <span class="footer-links"><a href="https://github.com/kuniong" rel="me">GitHub</a><a href="https://orcid.org/0000-0001-8934-0113" rel="me">ORCID</a><a href="mailto:nguyen.quoc.hung.xu@alumni.tsukuba.ac.jp">Email</a></span>
+    </div>
+  </footer>
+  <script src="/assets/js/main.js" defer></script>
+</body>
+</html>

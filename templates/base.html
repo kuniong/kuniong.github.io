@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ title }}</title>
+  <meta name="description" content="{{ description }}">
+  <meta name="author" content="Hung Q. Nguyen">
+  <meta name="theme-color" content="#ffffff">
+  <meta property="og:title" content="{{ title }}">
+  <meta property="og:description" content="{{ description }}">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://kuniong.github.io{{ path }}">
+  <link rel="canonical" href="https://kuniong.github.io{{ path }}">
+  <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/assets/css/main.css">
+</head>
+<body class="{{ body_class }}">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a class="brand" href="/">Hung Q. Nguyen</a>
+      <button class="menu-button" aria-label="Open navigation" aria-expanded="false"><span></span></button>
+      <nav class="nav-links" aria-label="Primary navigation">
+        <a href="/" {% if current == 'home' %}aria-current="page"{% endif %}>Home</a>
+        <a href="/research/" {% if current == 'research' %}aria-current="page"{% endif %}>Research</a>
+        <a href="/publications/" {% if current == 'publications' %}aria-current="page"{% endif %}>Publications</a>
+        <a href="/projects/" {% if current == 'projects' %}aria-current="page"{% endif %}>Projects</a>
+        <a href="/teaching/" {% if current == 'teaching' %}aria-current="page"{% endif %}>Teaching</a>
+        <a href="/cv/" {% if current == 'cv' %}aria-current="page"{% endif %}>CV</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">{{ body }}</main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <span>© <span data-current-year></span> Hung Q. Nguyen</span>
+      <span class="footer-links"><a href="https://github.com/kuniong" rel="me">GitHub</a><a href="https://orcid.org/0000-0001-8934-0113" rel="me">ORCID</a><a href="mailto:nguyen.quoc.hung.xu@alumni.tsukuba.ac.jp">Email</a></span>
+    </div>
+  </footer>
+  <script src="/assets/js/main.js" defer></script>
+</body>
+</html>
