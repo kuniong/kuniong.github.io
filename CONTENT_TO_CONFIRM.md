@@ -6,7 +6,6 @@ These are the only items I would actively verify with you before calling the sit
 
 - Preferred display name: currently **Hung Q. Nguyen**
 - Official-name formatting: currently used only implicitly; could add **NGUYEN Quoc Hung**
-- Google Scholar URL
 - LinkedIn URL
 - Preferred public email
 - Professional photo or no photo
@@ -46,6 +45,7 @@ Please confirm whether these are all acceptable to retain.
 The site currently includes:
 - 2026 OR Society of Japan Research Award for Young Researchers, clearly marked as selected with ceremony scheduled for September 2026;
 - 2025 Hitachi internal R&D award, 3rd place;
+- 2024 Hitachi year-end internal award;
 - 2024 Queueing Research Group Paper Award;
 - 2023 University of Tsukuba President’s Award;
 - 2023 Alumni Association Esaki Award;
@@ -55,8 +55,7 @@ Confirm whether exact internal-company award names should be public.
 
 ## Publications
 
-The first version contains 8 journal articles, selected conference papers, and the doctoral thesis. Useful next additions:
-- Google Scholar link;
+The site contains 8 peer-reviewed journal articles, conference papers, 8 additional scholarly works, and the doctoral thesis. Useful next additions:
 - open-access manuscript links where allowed;
 - code repositories;
 - slides;

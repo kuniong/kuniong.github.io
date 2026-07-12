@@ -12,11 +12,11 @@ The design is intentionally academic and restrained: clear typography, simple na
 - **Research** — three connected research themes with related papers and projects
 - **Publications** — filterable publication list with brief contribution notes
 - **Projects** — selected applied and industrial research at a confidentiality-safe level
-- **Teaching** — teaching experience, teaching approach, and courses you can contribute to
+- **Teaching (hidden from navigation)** — retained for possible future use
 - **CV** — printable web CV
 - **Work detail pages** — deeper explanations of selected papers and applied projects
 
-An additional `/experience/` page is retained but is not placed in the main navigation; professional appointments are also shown in the CV.
+The `/teaching/` and `/experience/` pages are retained but are not placed in the main navigation; professional appointments are also shown in the CV.
 
 ## Deploy to GitHub Pages
 
@@ -50,7 +50,6 @@ python build_site.py
 
 ## Information still worth adding later
 
-- Google Scholar profile URL
 - A preferred permanent academic email address when available
 - Current academic title and affiliation after an appointment change
 - Talks and seminars, once there is enough material for a separate page

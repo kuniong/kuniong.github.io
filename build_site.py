@@ -123,6 +123,70 @@ PUBLICATIONS = [
     },
     {
         "year": "2023",
+        "category": "other international-conference",
+        "title": "The rational outcome of queueing games: A fixed-point iteration based approach",
+        "authors": "Hung Q. Nguyen and Tuan Phung-Duc",
+        "venue": "10th International Congress on Industrial and Applied Mathematics (ICIAM), Tokyo, Japan, August 20–25, 2023",
+        "note": "Unrefereed international conference paper.",
+    },
+    {
+        "year": "2021",
+        "category": "other international-conference",
+        "title": "Equilibria of supply and demand in double-ended queueing systems",
+        "authors": "Hung Q. Nguyen and Tuan Phung-Duc",
+        "venue": "31st European Conference on Operational Research, Athens, Greece, July 11–14, 2021",
+        "note": "Unrefereed international conference paper.",
+    },
+    {
+        "year": "2022",
+        "category": "other domestic-conference",
+        "title": "Nash equilibria in two-population queueing game",
+        "authors": "Hung Q. Nguyen and Tuan Phung-Duc",
+        "venue": "日本オペレーションズ・リサーチ学会2022年秋季研究発表会アブストラクト集",
+        "note": "Unrefereed domestic conference paper.",
+    },
+    {
+        "year": "2022",
+        "category": "other domestic-conference",
+        "title": "The rational outcome of a two-population game in a matching queue",
+        "authors": "Hung Q. Nguyen and Tuan Phung-Duc",
+        "venue": "第39回（2022年度）待ち行列シンポジウム「確率モデルとその応用」報文集",
+        "note": "Unrefereed domestic conference paper.",
+    },
+    {
+        "year": "2021",
+        "category": "other domestic-conference",
+        "title": "Equilibrium behavior in a double-ended queueing system with positive matching times",
+        "authors": "Hung Q. Nguyen and Tuan Phung-Duc",
+        "venue": "第38回（2021年度）待ち行列シンポジウム「確率モデルとその応用」(Online), 報文集",
+        "note": "Unrefereed domestic conference paper.",
+    },
+    {
+        "year": "2021",
+        "category": "other domestic-conference",
+        "title": "Customer joining behavior and performance analysis of the airport taxi-passenger queue with two types of customers",
+        "authors": "Hung Q. Nguyen and Tuan Phung-Duc",
+        "venue": "第37回（2020年度）待ち行列シンポジウム「確率モデルとその応用」(Online), 報文集",
+        "note": "Unrefereed domestic conference paper.",
+    },
+    {
+        "year": "2021",
+        "category": "other domestic-conference",
+        "title": "Mixture density networks (MDNs) as a general framework for estimation of waiting time distributions in queueing systems: Two case studies",
+        "authors": "Hung Q. Nguyen and Tuan Phung-Duc",
+        "venue": "第37回（2020年度）待ち行列シンポジウム「確率モデルとその応用」(Online), 報文集",
+        "note": "Unrefereed domestic conference paper.",
+    },
+    {
+        "year": "2023",
+        "category": "other invited-article",
+        "title": "両サイド型待ち行列における戦略的な挙動 ―多集団ゲーム理論的な解析―",
+        "authors": "Hung Q. Nguyen and Tuan Phung-Duc",
+        "venue": "オペレーションズ・リサーチ：経営の科学 68(10), 514–520",
+        "note": "Invited domestic journal article (in Japanese).",
+    },
+    {
+        "year": "2023",
         "category": "thesis",
         "title": "Agent behaviors and optimal designs in double-ended queueing systems",
         "authors": "Hung Q. Nguyen",
@@ -166,12 +230,13 @@ def build_home() -> None:
     <section class="home-intro">
       <div class="container">
         <h1>Hung Q. Nguyen</h1>
-        <p class="home-role">Researcher in Operations Research and Stochastic Systems</p>
+        <p class="home-role">Researcher in Operations Research and Applied AI</p>
         <p class="home-affiliation">Advanced AI Innovation Center, Hitachi, Ltd.</p>
         <p class="home-summary">My research focuses on queueing theory, stochastic service systems, strategic behavior, and optimization. I am particularly interested in systems where users react to congestion and where mathematical models must ultimately support decisions under uncertainty and operational constraints.</p>
         <div class="profile-links">
           <a href="mailto:nguyen.quoc.hung.xu@alumni.tsukuba.ac.jp">Email</a>
           <a href="https://orcid.org/0000-0001-8934-0113">ORCID</a>
+          <a href="https://scholar.google.com/citations?user=5o4yCtMAAAAJ&amp;hl=en">Google Scholar</a>
           <a href="https://github.com/kuniong">GitHub</a>
           <a href="/cv/">CV</a>
         </div>
@@ -182,7 +247,7 @@ def build_home() -> None:
     <section class="academic-section">
       <div class="container">
         <h2>About</h2>
-        <p>I received a Ph.D. in Social Engineering from the University of Tsukuba and an M.A. in Economics from Tohoku University. My academic work studies stochastic systems and strategic decision-making, especially queueing and matching systems. In industrial research, I work on optimization, forecasting, simulation, and data-driven decision support for operational problems.</p>
+        <p>I received a Ph.D. in <a href="https://www.sk.tsukuba.ac.jp/PPS/en/">Policy and Planning Sciences</a> from the University of Tsukuba and an M.A. in Economics from Tohoku University. My academic work studies stochastic systems and strategic decision-making, especially queueing and matching systems. In industrial research, I work on optimization, forecasting, simulation, and data-driven decision support for operational problems.</p>
         <p>The common theme is simple: how should we understand and improve systems in which uncertainty, limited capacity, and human or organizational decisions interact?</p>
       </div>
     </section>
@@ -303,7 +368,7 @@ def build_publications() -> None:
             links.append(f'<a href="{p["detail"]}">Research story ↗</a>')
         if p.get("doi"):
             links.append(f'<a href="{p["doi"]}" target="_blank" rel="noopener">DOI ↗</a>')
-        links_html = f'<div class="pub-links">{"".join(links)}</div>' if links else ""
+        links_html = f'            <div class="pub-links">{"".join(links)}</div>' if links else ""
         cards.append(f"""
         <article class="pub-card" data-category="{p['category']}">
           <div class="pub-year">{p['year']}</div>
@@ -312,24 +377,27 @@ def build_publications() -> None:
             <div class="pub-authors">{p['authors']}</div>
             <div class="pub-venue">{p['venue']}</div>
             <div class="pub-note">{p['note']}</div>
-            {links_html}
+{links_html}
           </div>
         </article>
-        """)
+        """.rstrip())
     body = page_hero(
         "Publications",
         "Publications",
-        "Peer-reviewed journal articles, selected conference papers, and doctoral research. Brief contribution notes are included for readers outside the immediate topic area.",
-        "8 peer-reviewed journal articles · selected conference papers · doctoral dissertation",
+        "Peer-reviewed journal articles, conference papers, additional scholarly work, and doctoral research.",
+        "8 peer-reviewed journal articles · conference papers · additional scholarly work · doctoral dissertation",
     )
     body += f"""
     <section class="section compact"><div class="container">
-      <div class="filter-bar" aria-label="Filter publications">
-        <button class="filter-button active" data-filter="all">All</button>
-        <button class="filter-button" data-filter="selected">Selected</button>
-        <button class="filter-button" data-filter="journal">Journal articles</button>
-        <button class="filter-button" data-filter="conference">Conference papers</button>
-        <button class="filter-button" data-filter="thesis">Thesis</button>
+      <div class="filter-bar" role="group" aria-label="Filter publications">
+        <button class="filter-button active" type="button" data-filter="all" aria-pressed="true">All</button>
+        <!-- The Selected filter is hidden for now; retain it for possible future use.
+        <button class="filter-button" type="button" data-filter="selected" aria-pressed="false">Selected</button>
+        -->
+        <button class="filter-button" type="button" data-filter="journal" aria-pressed="false">Journal articles</button>
+        <button class="filter-button" type="button" data-filter="conference" aria-pressed="false">Conference papers</button>
+        <button class="filter-button" type="button" data-filter="other" aria-pressed="false">Additional scholarly work</button>
+        <button class="filter-button" type="button" data-filter="thesis" aria-pressed="false">Thesis</button>
       </div>
       <div class="publication-list">{''.join(cards)}</div>
     </div></section>
@@ -346,6 +414,7 @@ def build_projects() -> None:
     body += """
     <section class="section compact"><div class="container">
       <div class="project-grid">
+        <!-- Reservoir operations is hidden for now; retain the card for possible future use.
         <a class="project-card" href="/work/reservoir-operations/">
           <div class="work-type">Infrastructure · Optimization · Forecasting</div>
           <h2>Reservoir operations under uncertainty</h2>
@@ -353,6 +422,7 @@ def build_projects() -> None:
           <div class="tags"><span class="tag">Simulation</span><span class="tag">Optimization</span><span class="tag">Time series</span></div>
           <div class="project-footer"><span class="work-link">Read case study ↗</span><span class="confidential">Sanitized industrial project</span></div>
         </a>
+        -->
         <a class="project-card" href="/work/inventory-optimization/">
           <div class="work-type">Manufacturing · Inventory · Scalable optimization</div>
           <h2>Inventory optimization at scale</h2>
@@ -367,18 +437,11 @@ def build_projects() -> None:
           <div class="tags"><span class="tag">Contextual bandits</span><span class="tag">Deep RL</span><span class="tag">Allocation</span></div>
           <div class="project-footer"><span class="work-link">Read case study ↗</span><span class="confidential">Prior research role</span></div>
         </a>
-        <a class="project-card" href="/work/speed-enforcement/">
-          <div class="work-type">Traffic safety · Observational data · Policy optimization</div>
-          <h2>Automated speed enforcement allocation</h2>
-          <p>A public research project using observational evidence and reinforcement learning to study deployment of limited enforcement resources.</p>
-          <div class="tags"><span class="tag">Policy learning</span><span class="tag">Causal evidence</span><span class="tag">RL</span></div>
-          <div class="project-footer"><span class="work-link">Read research story ↗</span><span class="confidential">Published academic work</span></div>
-        </a>
       </div>
     </div></section>
     <section class="section compact"><div class="container"><div class="disclosure-box"><h2>My disclosure rule</h2><p>A technically sophisticated reader should be able to understand why the work was difficult, what I contributed, and which capabilities it demonstrates—but not be able to reconstruct a client’s data, operating logic, proprietary implementation, or business performance. Where public papers or patents exist, the site links to those public artifacts instead of reproducing internal details.</p></div></div></section>
     """
-    render("projects", title="Projects — Hung Q. Nguyen", description="Selected applied research projects in infrastructure, inventory, e-commerce, and traffic safety, presented at a confidentiality-safe level.", current="projects", body=body)
+    render("projects", title="Projects — Hung Q. Nguyen", description="Selected applied research projects in inventory optimization and e-commerce decision systems, presented at a confidentiality-safe level.", current="projects", body=body)
 
 
 def build_experience() -> None:
@@ -463,36 +526,39 @@ def build_cv() -> None:
       </aside>
       <div class="cv-main">
         <section class="cv-section"><h2>Appointments</h2>
-          <div class="cv-entry"><div class="date">2023 — present</div><div><h3>Researcher, Hitachi, Ltd.</h3><p>Advanced AI Innovation Center, Social Intelligence Research Department. Research and development in AI, operations research, mathematical optimization, forecasting, and data analysis.</p></div></div>
-          <div class="cv-entry"><div class="date">2022 — 2023</div><div><h3>Part-time Lecturer &amp; Researcher, VietDevelopers Technology, Ltd.</h3><p>Research on e-commerce machine learning and optimization; online teaching in reinforcement learning, mathematical optimization, and mathematics for AI.</p></div></div>
+          <div class="cv-entry"><div class="date">04/2023 — present</div><div><h3>Researcher, Hitachi, Ltd.</h3><div class="cv-affiliation">Advanced AI Innovation Center, Social Intelligence Research Department</div><p>Research and development in AI, operations research, mathematical optimization, forecasting, and data analysis.</p></div></div>
         </section>
         <section class="cv-section"><h2>Education</h2>
-          <div class="cv-entry"><div class="date">2023</div><div><h3>Ph.D. in Social Engineering, University of Tsukuba</h3><p>Dissertation: <em>Agent behaviors and optimal designs in double-ended queueing systems.</em></p></div></div>
-          <div class="cv-entry"><div class="date">2019</div><div><h3>M.A. in Economics, Tohoku University</h3><p>Graduate School of Economics and Management, Data Science Program.</p></div></div>
-          <div class="cv-entry"><div class="date">2017</div><div><h3>B.A. in Economics &amp; International Business, Foreign Trade University</h3></div></div>
+          <div class="cv-entry"><div class="date">04/2020 — 03/2023</div><div><h3>Ph.D. in <a href="https://www.sk.tsukuba.ac.jp/PPS/en/">Policy and Planning Sciences</a>, University of Tsukuba</h3><p><a href="http://sk.tsukuba.ac.jp/~tuan/lab/en/index.html">Applied Stochastic Systems Laboratory</a>, supervised by Professor Tuan Phung-Duc.<br>Dissertation: <em>Agent behaviors and optimal designs in double-ended queueing systems.</em></p></div></div>
+          <div class="cv-entry"><div class="date">10/2017 — 09/2019</div><div><h3>M.A. in Economics, Tohoku University</h3><p>Graduate School of Economics and Management, Data Science Program.</p></div></div>
+          <div class="cv-entry"><div class="date">08/2012 — 02/2017</div><div><h3>B.A. in Economics &amp; International Business, Foreign Trade University</h3><p>Graduated in the top 1% of the cohort.</p></div></div>
         </section>
         <section class="cv-section"><h2>Selected publications</h2>
           <ol class="cv-list"><li>Nguyen, H. Q. (2026). Learning to allocate automated speed enforcement. <em>Case Studies on Transport Policy</em>.</li><li>Nguyen, H. Q., &amp; Phung-Duc, T. (2025). Subgame perfect Nash equilibrium analysis in a two-population strategic matching queue. <em>Operations Research Letters</em>.</li><li>Nguyen, H. Q., &amp; Phung-Duc, T. (2022). Strategic customer behavior and optimal policies in a passenger–taxi double-ended queueing system. <em>Queueing Systems</em>.</li><li>Nguyen, H. Q., &amp; Phung-Duc, T. (2022). Supply–demand equilibria and multivariate optimization of social welfare. <em>Computers &amp; Industrial Engineering</em>.</li><li>Nguyen, H. Q., &amp; Phung-Duc, T. (2022). A two-population game in observable double-ended queueing systems. <em>Operations Research Letters</em>.</li></ol>
           <div class="pub-links"><a href="/publications/">Complete publication list ↗</a></div>
         </section>
-        <section class="cv-section"><h2>Selected applied research</h2>
-          <div class="cv-entry"><div class="date">Infrastructure</div><div><h3>Reservoir operations under uncertainty</h3><p>Mathematical and computational decision support using forecasting, simulation, and optimization. Sensitive client and system details omitted.</p></div></div>
-          <div class="cv-entry"><div class="date">Manufacturing</div><div><h3>Inventory optimization</h3><p>Scalable multi-item inventory decision models, including safety-stock model selection under shared budget constraints.</p></div></div>
-          <div class="cv-entry"><div class="date">Digital systems</div><div><h3>E-commerce decision systems</h3><p>Research on dynamic pricing, seller and advertiser selection, contextual bandits, and logistics optimization.</p></div></div>
+        <section class="cv-section"><h2>Awards</h2>
+          <div class="cv-entry"><div class="date">09/2026</div><div><h3>16th Research Award for Young Researchers</h3><p>The Operations Research Society of Japan; selected, ceremony scheduled for September 2026.</p></div></div>
+          <div class="cv-entry"><div class="date">12/2025</div><div><h3>Digital Innovation R&amp;D Technology Award — 3rd Prize</h3><p>Hitachi, Ltd., Research &amp; Development Group.</p></div></div>
+          <div class="cv-entry"><div class="date">12/2024</div><div><h3>Year-end Internal Award</h3><p>Hitachi, Ltd., Digital Systems &amp; Services Department.</p></div></div>
+          <div class="cv-entry"><div class="date">05/2024</div><div><h3>Paper Award</h3><p>Special Interest Group of Queueing Theory, The Operations Research Society of Japan.</p></div></div>
+          <div class="cv-entry"><div class="date">03/2023</div><div><h3>President’s Award</h3><p>University of Tsukuba.</p></div></div>
+          <div class="cv-entry"><div class="date">03/2023</div><div><h3>Alumni Association Esaki Award</h3><p>University of Tsukuba Alumni Association.</p></div></div>
+          <div class="cv-entry"><div class="date">01/2023</div><div><h3>Research Encouragement Award</h3><p>Special Interest Group of Queueing Theory, The Operations Research Society of Japan.</p></div></div>
         </section>
-        <section class="cv-section"><h2>Awards &amp; support</h2>
-          <div class="cv-entry"><div class="date">2026</div><div><h3>16th Research Award for Young Researchers</h3><p>Operations Research Society of Japan; selected, ceremony scheduled September 2026.</p></div></div>
-          <div class="cv-entry"><div class="date">2025</div><div><h3>Digital Innovation R&amp;D Technology Award, 3rd place</h3><p>Hitachi internal recognition.</p></div></div>
-          <div class="cv-entry"><div class="date">2024</div><div><h3>Paper Award</h3><p>Queueing Research Group, Operations Research Society of Japan.</p></div></div>
-          <div class="cv-entry"><div class="date">2023</div><div><h3>President’s Award and Alumni Association Esaki Award</h3><p>University of Tsukuba.</p></div></div>
+        <section class="cv-section"><h2>Research funding</h2>
           <div class="cv-entry"><div class="date">2021 — 2023</div><div><h3>JST SPRING doctoral research support</h3><p>Japan Science and Technology Agency / University of Tsukuba.</p></div></div>
         </section>
-        <section class="cv-section"><h2>Teaching</h2><div class="cv-entry"><div class="date">2022 — 2023</div><div><h3>Online lecturer</h3><p>Courses: Foundations of Reinforcement Learning, Mathematical Optimization, and Mathematics for AI. Developed lectures, code, exercises, and project materials.</p></div></div></section>
-        <section class="cv-section"><h2>Skills &amp; languages</h2><div class="cv-entry"><div class="date">Methods</div><div><p>Queueing models, stochastic processes, game-theoretic equilibrium analysis, mathematical optimization, simulation, reinforcement learning, forecasting, and data analysis.</p></div></div><div class="cv-entry"><div class="date">Programming</div><div><p>Python and scientific computing workflows.</p></div></div><div class="cv-entry"><div class="date">Languages</div><div><p>Vietnamese; English (TOEIC 935); Japanese (JLPT N2).</p></div></div></section>
+        <section class="cv-section"><h2>Peer-review activities</h2>
+          <div class="cv-entry"><div class="date">Journals</div><div><ul class="cv-list"><li>Discover Computing</li><li>INFOR</li><li>Mathematics and Computers in Simulation</li><li>Methodology and Computing in Applied Probability</li><li>Omega</li><li>Queueing Models and Service Management</li><li>Queueing Systems</li><li>Scientific Reports</li></ul></div></div>
+        </section>
+        <section class="cv-section"><h2>Languages</h2>
+          <div class="language-grid"><div class="language-item"><strong>Vietnamese</strong><span>Native</span></div><div class="language-item"><strong>English</strong><span>Business level</span></div><div class="language-item"><strong>Japanese</strong><span>Nearly business level</span></div></div>
+        </section>
       </div>
     </div></section>
     """
-    render("cv", title="CV — Hung Q. Nguyen", description="Web curriculum vitae for Hung Q. Nguyen: research, education, appointments, publications, awards, teaching, and applied projects.", current="cv", body=body, body_class="cv-page")
+    render("cv", title="CV — Hung Q. Nguyen", description="Web curriculum vitae for Hung Q. Nguyen: research, education, appointments, publications, awards, funding, peer-review activities, and languages.", current="cv", body=body, body_class="cv-page")
 
 
 def case_page(slug: str, *, case_type: str, title: str, lead: str, meta: list[str], copy: str, aside: str, current: str) -> None:

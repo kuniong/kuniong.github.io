@@ -4,11 +4,11 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Projects — Hung Q. Nguyen</title>
-  <meta name="description" content="Selected applied research projects in infrastructure, inventory, e-commerce, and traffic safety, presented at a confidentiality-safe level.">
+  <meta name="description" content="Selected applied research projects in inventory optimization and e-commerce decision systems, presented at a confidentiality-safe level.">
   <meta name="author" content="Hung Q. Nguyen">
-  <meta name="theme-color" content="#ffffff">
+  <meta name="theme-color" content="#172b3a">
   <meta property="og:title" content="Projects — Hung Q. Nguyen">
-  <meta property="og:description" content="Selected applied research projects in infrastructure, inventory, e-commerce, and traffic safety, presented at a confidentiality-safe level.">
+  <meta property="og:description" content="Selected applied research projects in inventory optimization and e-commerce decision systems, presented at a confidentiality-safe level.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://kuniong.github.io/projects/">
   <link rel="canonical" href="https://kuniong.github.io/projects/">
@@ -20,13 +20,15 @@
   <header class="site-header">
     <div class="container nav-wrap">
       <a class="brand" href="/">Hung Q. Nguyen</a>
-      <button class="menu-button" aria-label="Open navigation" aria-expanded="false"><span></span></button>
-      <nav class="nav-links" aria-label="Primary navigation">
+      <button class="menu-button" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="primary-navigation"><span></span></button>
+      <nav class="nav-links" id="primary-navigation" aria-label="Primary navigation">
         <a href="/" >Home</a>
         <a href="/research/" >Research</a>
         <a href="/publications/" >Publications</a>
         <a href="/projects/" aria-current="page">Projects</a>
+        <!-- Teaching navigation is hidden for now; the page is retained for future use.
         <a href="/teaching/" >Teaching</a>
+        -->
         <a href="/cv/" >CV</a>
       </nav>
     </div>
@@ -43,6 +45,7 @@
     
     <section class="section compact"><div class="container">
       <div class="project-grid">
+        <!-- Reservoir operations is hidden for now; retain the card for possible future use.
         <a class="project-card" href="/work/reservoir-operations/">
           <div class="work-type">Infrastructure · Optimization · Forecasting</div>
           <h2>Reservoir operations under uncertainty</h2>
@@ -50,6 +53,7 @@
           <div class="tags"><span class="tag">Simulation</span><span class="tag">Optimization</span><span class="tag">Time series</span></div>
           <div class="project-footer"><span class="work-link">Read case study ↗</span><span class="confidential">Sanitized industrial project</span></div>
         </a>
+        -->
         <a class="project-card" href="/work/inventory-optimization/">
           <div class="work-type">Manufacturing · Inventory · Scalable optimization</div>
           <h2>Inventory optimization at scale</h2>
@@ -63,13 +67,6 @@
           <p>Research and prototyping across dynamic pricing, seller selection, advertising allocation, and logistics optimization.</p>
           <div class="tags"><span class="tag">Contextual bandits</span><span class="tag">Deep RL</span><span class="tag">Allocation</span></div>
           <div class="project-footer"><span class="work-link">Read case study ↗</span><span class="confidential">Prior research role</span></div>
-        </a>
-        <a class="project-card" href="/work/speed-enforcement/">
-          <div class="work-type">Traffic safety · Observational data · Policy optimization</div>
-          <h2>Automated speed enforcement allocation</h2>
-          <p>A public research project using observational evidence and reinforcement learning to study deployment of limited enforcement resources.</p>
-          <div class="tags"><span class="tag">Policy learning</span><span class="tag">Causal evidence</span><span class="tag">RL</span></div>
-          <div class="project-footer"><span class="work-link">Read research story ↗</span><span class="confidential">Published academic work</span></div>
         </a>
       </div>
     </div></section>

@@ -19,8 +19,12 @@
   filterButtons.forEach((button) => {
     button.addEventListener('click', () => {
       const filter = button.dataset.filter;
-      filterButtons.forEach((item) => item.classList.remove('active'));
+      filterButtons.forEach((item) => {
+        item.classList.remove('active');
+        item.setAttribute('aria-pressed', 'false');
+      });
       button.classList.add('active');
+      button.setAttribute('aria-pressed', 'true');
       filterItems.forEach((item) => {
         const show = filter === 'all' || item.dataset.category.split(' ').includes(filter);
         item.classList.toggle('hidden-item', !show);

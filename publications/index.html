@@ -6,7 +6,7 @@
   <title>Publications — Hung Q. Nguyen</title>
   <meta name="description" content="Journal articles and conference papers in queueing theory, strategic behavior, stochastic systems, inventory, and applied AI.">
   <meta name="author" content="Hung Q. Nguyen">
-  <meta name="theme-color" content="#ffffff">
+  <meta name="theme-color" content="#172b3a">
   <meta property="og:title" content="Publications — Hung Q. Nguyen">
   <meta property="og:description" content="Journal articles and conference papers in queueing theory, strategic behavior, stochastic systems, inventory, and applied AI.">
   <meta property="og:type" content="website">
@@ -20,13 +20,15 @@
   <header class="site-header">
     <div class="container nav-wrap">
       <a class="brand" href="/">Hung Q. Nguyen</a>
-      <button class="menu-button" aria-label="Open navigation" aria-expanded="false"><span></span></button>
-      <nav class="nav-links" aria-label="Primary navigation">
+      <button class="menu-button" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="primary-navigation"><span></span></button>
+      <nav class="nav-links" id="primary-navigation" aria-label="Primary navigation">
         <a href="/" >Home</a>
         <a href="/research/" >Research</a>
         <a href="/publications/" aria-current="page">Publications</a>
         <a href="/projects/" >Projects</a>
+        <!-- Teaching navigation is hidden for now; the page is retained for future use.
         <a href="/teaching/" >Teaching</a>
+        -->
         <a href="/cv/" >CV</a>
       </nav>
     </div>
@@ -36,18 +38,21 @@
     <section class="page-hero">
       <div class="container">
         <h1>Publications</h1>
-        <p class="lead">Peer-reviewed journal articles, selected conference papers, and doctoral research. Brief contribution notes are included for readers outside the immediate topic area.</p>
-        <div class="meta-line">8 peer-reviewed journal articles · selected conference papers · doctoral dissertation</div>
+        <p class="lead">Peer-reviewed journal articles, conference papers, additional scholarly work, and doctoral research.</p>
+        <div class="meta-line">8 peer-reviewed journal articles · conference papers · additional scholarly work · doctoral dissertation</div>
       </div>
     </section>
     
     <section class="section compact"><div class="container">
-      <div class="filter-bar" aria-label="Filter publications">
-        <button class="filter-button active" data-filter="all">All</button>
-        <button class="filter-button" data-filter="selected">Selected</button>
-        <button class="filter-button" data-filter="journal">Journal articles</button>
-        <button class="filter-button" data-filter="conference">Conference papers</button>
-        <button class="filter-button" data-filter="thesis">Thesis</button>
+      <div class="filter-bar" role="group" aria-label="Filter publications">
+        <button class="filter-button active" type="button" data-filter="all" aria-pressed="true">All</button>
+        <!-- The Selected filter is hidden for now; retain it for possible future use.
+        <button class="filter-button" type="button" data-filter="selected" aria-pressed="false">Selected</button>
+        -->
+        <button class="filter-button" type="button" data-filter="journal" aria-pressed="false">Journal articles</button>
+        <button class="filter-button" type="button" data-filter="conference" aria-pressed="false">Conference papers</button>
+        <button class="filter-button" type="button" data-filter="other" aria-pressed="false">Additional scholarly work</button>
+        <button class="filter-button" type="button" data-filter="thesis" aria-pressed="false">Thesis</button>
       </div>
       <div class="publication-list">
         <article class="pub-card" data-category="journal selected">
@@ -60,7 +65,6 @@
             <div class="pub-links"><a href="/work/speed-enforcement/">Research story ↗</a><a href="https://doi.org/10.1016/j.cstp.2026.101855" target="_blank" rel="noopener">DOI ↗</a></div>
           </div>
         </article>
-        
         <article class="pub-card" data-category="journal selected">
           <div class="pub-year">2025</div>
           <div>
@@ -71,7 +75,6 @@
             <div class="pub-links"><a href="/work/matching-queue/">Research story ↗</a><a href="https://doi.org/10.1016/j.orl.2025.107362" target="_blank" rel="noopener">DOI ↗</a></div>
           </div>
         </article>
-        
         <article class="pub-card" data-category="journal">
           <div class="pub-year">2023</div>
           <div>
@@ -82,7 +85,6 @@
             <div class="pub-links"><a href="https://doi.org/10.1007/s42979-022-01479-1" target="_blank" rel="noopener">DOI ↗</a></div>
           </div>
         </article>
-        
         <article class="pub-card" data-category="journal selected">
           <div class="pub-year">2022</div>
           <div>
@@ -93,7 +95,6 @@
             <div class="pub-links"><a href="/work/passenger-taxi/">Research story ↗</a><a href="https://doi.org/10.1007/s11134-022-09786-3" target="_blank" rel="noopener">DOI ↗</a></div>
           </div>
         </article>
-        
         <article class="pub-card" data-category="journal">
           <div class="pub-year">2022</div>
           <div>
@@ -104,7 +105,6 @@
             <div class="pub-links"><a href="https://doi.org/10.1016/j.orl.2022.04.003" target="_blank" rel="noopener">DOI ↗</a></div>
           </div>
         </article>
-        
         <article class="pub-card" data-category="journal">
           <div class="pub-year">2022</div>
           <div>
@@ -115,7 +115,6 @@
             <div class="pub-links"><a href="https://doi.org/10.3390/math10122101" target="_blank" rel="noopener">DOI ↗</a></div>
           </div>
         </article>
-        
         <article class="pub-card" data-category="journal selected">
           <div class="pub-year">2022</div>
           <div>
@@ -126,7 +125,6 @@
             <div class="pub-links"><a href="/work/supply-demand/">Research story ↗</a><a href="https://doi.org/10.1016/j.cie.2022.108306" target="_blank" rel="noopener">DOI ↗</a></div>
           </div>
         </article>
-        
         <article class="pub-card" data-category="journal">
           <div class="pub-year">2022</div>
           <div>
@@ -137,7 +135,6 @@
             <div class="pub-links"><a href="https://doi.org/10.1016/j.orl.2022.05.004" target="_blank" rel="noopener">DOI ↗</a></div>
           </div>
         </article>
-        
         <article class="pub-card" data-category="conference selected">
           <div class="pub-year">2025</div>
           <div>
@@ -148,7 +145,6 @@
             <div class="pub-links"><a href="/work/inventory-optimization/">Research story ↗</a></div>
           </div>
         </article>
-        
         <article class="pub-card" data-category="conference">
           <div class="pub-year">2023</div>
           <div>
@@ -159,7 +155,6 @@
             <div class="pub-links"><a href="https://doi.org/10.1007/978-3-031-25049-1_6" target="_blank" rel="noopener">DOI ↗</a></div>
           </div>
         </article>
-        
         <article class="pub-card" data-category="conference">
           <div class="pub-year">2021</div>
           <div>
@@ -170,7 +165,86 @@
             <div class="pub-links"><a href="https://doi.org/10.1007/978-3-030-91825-5_9" target="_blank" rel="noopener">DOI ↗</a></div>
           </div>
         </article>
-        
+        <article class="pub-card" data-category="other international-conference">
+          <div class="pub-year">2023</div>
+          <div>
+            <h3>The rational outcome of queueing games: A fixed-point iteration based approach</h3>
+            <div class="pub-authors">Hung Q. Nguyen and Tuan Phung-Duc</div>
+            <div class="pub-venue">10th International Congress on Industrial and Applied Mathematics (ICIAM), Tokyo, Japan, August 20–25, 2023</div>
+            <div class="pub-note">Unrefereed international conference paper.</div>
+
+          </div>
+        </article>
+        <article class="pub-card" data-category="other international-conference">
+          <div class="pub-year">2021</div>
+          <div>
+            <h3>Equilibria of supply and demand in double-ended queueing systems</h3>
+            <div class="pub-authors">Hung Q. Nguyen and Tuan Phung-Duc</div>
+            <div class="pub-venue">31st European Conference on Operational Research, Athens, Greece, July 11–14, 2021</div>
+            <div class="pub-note">Unrefereed international conference paper.</div>
+
+          </div>
+        </article>
+        <article class="pub-card" data-category="other domestic-conference">
+          <div class="pub-year">2022</div>
+          <div>
+            <h3>Nash equilibria in two-population queueing game</h3>
+            <div class="pub-authors">Hung Q. Nguyen and Tuan Phung-Duc</div>
+            <div class="pub-venue">日本オペレーションズ・リサーチ学会2022年秋季研究発表会アブストラクト集</div>
+            <div class="pub-note">Unrefereed domestic conference paper.</div>
+
+          </div>
+        </article>
+        <article class="pub-card" data-category="other domestic-conference">
+          <div class="pub-year">2022</div>
+          <div>
+            <h3>The rational outcome of a two-population game in a matching queue</h3>
+            <div class="pub-authors">Hung Q. Nguyen and Tuan Phung-Duc</div>
+            <div class="pub-venue">第39回（2022年度）待ち行列シンポジウム「確率モデルとその応用」報文集</div>
+            <div class="pub-note">Unrefereed domestic conference paper.</div>
+
+          </div>
+        </article>
+        <article class="pub-card" data-category="other domestic-conference">
+          <div class="pub-year">2021</div>
+          <div>
+            <h3>Equilibrium behavior in a double-ended queueing system with positive matching times</h3>
+            <div class="pub-authors">Hung Q. Nguyen and Tuan Phung-Duc</div>
+            <div class="pub-venue">第38回（2021年度）待ち行列シンポジウム「確率モデルとその応用」(Online), 報文集</div>
+            <div class="pub-note">Unrefereed domestic conference paper.</div>
+
+          </div>
+        </article>
+        <article class="pub-card" data-category="other domestic-conference">
+          <div class="pub-year">2021</div>
+          <div>
+            <h3>Customer joining behavior and performance analysis of the airport taxi-passenger queue with two types of customers</h3>
+            <div class="pub-authors">Hung Q. Nguyen and Tuan Phung-Duc</div>
+            <div class="pub-venue">第37回（2020年度）待ち行列シンポジウム「確率モデルとその応用」(Online), 報文集</div>
+            <div class="pub-note">Unrefereed domestic conference paper.</div>
+
+          </div>
+        </article>
+        <article class="pub-card" data-category="other domestic-conference">
+          <div class="pub-year">2021</div>
+          <div>
+            <h3>Mixture density networks (MDNs) as a general framework for estimation of waiting time distributions in queueing systems: Two case studies</h3>
+            <div class="pub-authors">Hung Q. Nguyen and Tuan Phung-Duc</div>
+            <div class="pub-venue">第37回（2020年度）待ち行列シンポジウム「確率モデルとその応用」(Online), 報文集</div>
+            <div class="pub-note">Unrefereed domestic conference paper.</div>
+
+          </div>
+        </article>
+        <article class="pub-card" data-category="other invited-article">
+          <div class="pub-year">2023</div>
+          <div>
+            <h3>両サイド型待ち行列における戦略的な挙動 ―多集団ゲーム理論的な解析―</h3>
+            <div class="pub-authors">Hung Q. Nguyen and Tuan Phung-Duc</div>
+            <div class="pub-venue">オペレーションズ・リサーチ：経営の科学 68(10), 514–520</div>
+            <div class="pub-note">Invited domestic journal article (in Japanese).</div>
+
+          </div>
+        </article>
         <article class="pub-card" data-category="thesis">
           <div class="pub-year">2023</div>
           <div>
@@ -178,10 +252,9 @@
             <div class="pub-authors">Hung Q. Nguyen</div>
             <div class="pub-venue">Doctoral dissertation, University of Tsukuba</div>
             <div class="pub-note">Doctoral work on strategic behavior, equilibria, and system design in matching queues.</div>
-            
+
           </div>
-        </article>
-        </div>
+        </article></div>
     </div></section>
     </main>
 
