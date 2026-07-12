@@ -292,7 +292,7 @@ def build_home() -> None:
       <div class="container">
         <h2>News</h2>
         <ul class="news-list">
-          <li><span class="news-date">2026.09</span><span>Granted the 16th Research Award for Young Researchers of the Operations Research Society of Japan.</span></li>
+          <li><span class="news-date">2026.09</span><span>Granted the 16th Research Encourage Award for Young Researchers of the Operations Research Society of Japan.</span></li>
           <li><span class="news-date">2026.05</span><span>New paper titled "
 Learning to allocate automated speed enforcement: An observational policy optimization framework with reinforcement learning" published in <em>Case Studies on Transport Policy</em>.</span></li>
           <li><span class="news-date">2025.12</span><span>New paper titled "Subgame perfect Nash equilibrium analysis in a two-population strategic matching queue with nonzero matching times" published in <em>Operations Research Letters</em>.</span></li>
@@ -470,7 +470,7 @@ def build_experience() -> None:
     <section class="section compact"><div class="container">
       <div class="section-head"><div><div class="eyebrow">Selected recognition</div><h2 class="section-title">Research recognized in both academic and industrial settings.</h2></div><p class="section-intro">I keep this list selective. The web CV contains the fuller chronology.</p></div>
       <div class="award-grid">
-        <div class="award"><span class="award-year">2026</span><strong>16th Research Award for Young Researchers</strong><span>Operations Research Society of Japan · selected; ceremony scheduled September 2026</span></div>
+        <div class="award"><span class="award-year">2026</span><strong>16th Research Encourage Award for Young Researchers</strong><span>Operations Research Society of Japan · selected; ceremony scheduled September 2026</span></div>
         <div class="award"><span class="award-year">2025</span><strong>Digital Innovation R&amp;D Technology Award, 3rd place</strong><span>Hitachi internal recognition</span></div>
         <div class="award"><span class="award-year">2024</span><strong>Paper Award</strong><span>Queueing Research Group, Operations Research Society of Japan</span></div>
         <div class="award"><span class="award-year">2023</span><strong>President’s Award</strong><span>University of Tsukuba</span></div>
