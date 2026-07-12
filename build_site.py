@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+from hashlib import sha256
 from pathlib import Path
 from markupsafe import Markup
 from jinja2 import Environment, FileSystemLoader, select_autoescape
@@ -10,6 +11,13 @@ ENV = Environment(
     autoescape=select_autoescape(["html", "xml"]),
 )
 BASE = ENV.get_template("base.html")
+
+
+def asset_version() -> str:
+    digest = sha256()
+    for asset in (ROOT / "assets/css/main.css", ROOT / "assets/js/main.js"):
+        digest.update(asset.read_bytes())
+    return digest.hexdigest()[:10]
 
 SOCIAL = {
     "github": "https://github.com/kuniong",
@@ -195,6 +203,15 @@ PUBLICATIONS = [
     },
 ]
 
+PUBLICATION_SECTIONS = [
+    ("journal", "Peer-reviewed journal articles"),
+    ("conference", "Peer-reviewed conference papers"),
+    ("international-conference", "International conference papers (unrefereed)"),
+    ("domestic-conference", "Domestic conference papers (unrefereed)"),
+    ("invited-article", "Invited journal article"),
+    ("thesis", "Doctoral dissertation"),
+]
+
 
 def page_hero(eyebrow: str, title: str, lead: str, meta: str = "") -> str:
     meta_html = f'<div class="meta-line">{meta}</div>' if meta else ""
@@ -221,6 +238,7 @@ def render(path: str, *, title: str, description: str, current: str, body: str, 
         body=Markup(body),
         body_class=body_class,
         path="/" if path in ("", "/", "index.html") else f"/{path.strip('/')}/",
+        asset_version=asset_version(),
     )
     output.write_text(html, encoding="utf-8")
 
@@ -362,25 +380,48 @@ def build_research() -> None:
 
 
 def build_publications() -> None:
-    cards = []
-    for p in PUBLICATIONS:
-        links = []
-        if p.get("detail"):
-            links.append(f'<a href="{p["detail"]}">Research story ↗</a>')
-        if p.get("doi"):
-            links.append(f'<a href="{p["doi"]}" target="_blank" rel="noopener">DOI ↗</a>')
-        links_html = f'            <div class="pub-links">{"".join(links)}</div>' if links else ""
-        cards.append(f"""
-        <article class="pub-card" data-category="{p['category']}">
-          <div class="pub-year">{p['year']}</div>
-          <div>
-            <h3>{p['title']}</h3>
-            <div class="pub-authors">{p['authors']}</div>
-            <div class="pub-venue">{p['venue']}</div>
-            <div class="pub-note">{p['note']}</div>
+    publication_sections = []
+    for section_key, section_title in PUBLICATION_SECTIONS:
+        papers = [
+            publication
+            for publication in PUBLICATIONS
+            if section_key in publication["category"].split()
+        ]
+        papers.sort(key=lambda publication: int(publication["year"]), reverse=True)
+
+        cards = []
+        for index, p in enumerate(papers):
+            links = []
+            if p.get("detail"):
+                links.append(f'<a href="{p["detail"]}">Research story ↗</a>')
+            if p.get("doi"):
+                links.append(f'<a href="{p["doi"]}" target="_blank" rel="noopener">DOI ↗</a>')
+            links_html = f'              <div class="pub-links">{"".join(links)}</div>' if links else ""
+            publication_number = len(papers) - index
+            year_html = ""
+            if p["year"] not in p["venue"]:
+                year_html = f' <time class="pub-year" datetime="{p["year"]}">({p["year"]})</time>'
+            cards.append(f"""
+          <li class="pub-card" data-category="{p['category']}" data-year="{p['year']}">
+            <div class="pub-number" aria-label="Publication {publication_number}">{publication_number}.</div>
+            <article class="pub-citation">
+              <div class="pub-authors">{p['authors']}</div>
+              <h3>{p['title']}</h3>
+              <div class="pub-venue">{p['venue']}{year_html}</div>
+              <div class="pub-note">{p['note']}</div>
 {links_html}
+            </article>
+          </li>
+            """.rstrip())
+
+        publication_sections.append(f"""
+        <section class="publication-group" data-publication-group>
+          <div class="publication-group-heading">
+            <h2>{section_title}</h2>
+            <span class="publication-count">{len(papers)}</span>
           </div>
-        </article>
+          <ol class="publication-list" aria-label="{section_title}">{''.join(cards)}</ol>
+        </section>
         """.rstrip())
     body = page_hero(
         "Publications",
@@ -400,7 +441,7 @@ def build_publications() -> None:
         <button class="filter-button" type="button" data-filter="other" aria-pressed="false">Additional scholarly work</button>
         <button class="filter-button" type="button" data-filter="thesis" aria-pressed="false">Thesis</button>
       </div>
-      <div class="publication-list">{''.join(cards)}</div>
+      <div class="publication-groups">{''.join(publication_sections)}</div>
     </div></section>
     """
     render("publications", title="Publications — Hung Q. Nguyen", description="Journal articles and conference papers in queueing theory, strategic behavior, stochastic systems, inventory, and applied AI.", current="publications", body=body)
@@ -539,7 +580,7 @@ def build_cv() -> None:
           <div class="pub-links"><a href="/publications/">Complete publication list ↗</a></div>
         </section>
         <section class="cv-section"><h2>Awards</h2>
-          <div class="cv-entry"><div class="date">09/2026</div><div><h3>16th Research Award for Young Researchers</h3><p>The Operations Research Society of Japan; selected, ceremony scheduled for September 2026.</p></div></div>
+          <div class="cv-entry"><div class="date">09/2026</div><div><h3>16th Research Encourage Award for Young Researchers</h3><p>The Operations Research Society of Japan; selected, ceremony scheduled for September 2026.</p></div></div>
           <div class="cv-entry"><div class="date">12/2025</div><div><h3>Digital Innovation R&amp;D Technology Award — 3rd Prize</h3><p>Hitachi, Ltd., Research &amp; Development Group.</p></div></div>
           <div class="cv-entry"><div class="date">12/2024</div><div><h3>Year-end Internal Award</h3><p>Hitachi, Ltd., Digital Systems &amp; Services Department.</p></div></div>
           <div class="cv-entry"><div class="date">05/2024</div><div><h3>Paper Award</h3><p>Special Interest Group of Queueing Theory, The Operations Research Society of Japan.</p></div></div>

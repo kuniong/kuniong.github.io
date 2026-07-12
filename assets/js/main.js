@@ -16,6 +16,7 @@
 
   const filterButtons = document.querySelectorAll('[data-filter]');
   const filterItems = document.querySelectorAll('[data-category]');
+  const publicationGroups = document.querySelectorAll('[data-publication-group]');
   filterButtons.forEach((button) => {
     button.addEventListener('click', () => {
       const filter = button.dataset.filter;
@@ -28,6 +29,10 @@
       filterItems.forEach((item) => {
         const show = filter === 'all' || item.dataset.category.split(' ').includes(filter);
         item.classList.toggle('hidden-item', !show);
+      });
+      publicationGroups.forEach((group) => {
+        const hasVisiblePublication = group.querySelector('[data-category]:not(.hidden-item)');
+        group.classList.toggle('hidden-item', !hasVisiblePublication);
       });
     });
   });
