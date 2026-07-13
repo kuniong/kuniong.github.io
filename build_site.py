@@ -600,7 +600,7 @@ def build_cv() -> None:
           <div class="pub-links"><a href="/publications/">Complete publication list ↗</a></div>
         </section>
         <section class="cv-section"><h2>Awards</h2>
-          <div class="cv-entry"><div class="date">09/2026</div><div><h3>16th Research Encourage Award for Young Researchers</h3><p>The Operations Research Society of Japan; selected, ceremony scheduled for September 2026.</p></div></div>
+          <div class="cv-entry"><div class="date">09/2026</div><div><h3>16th Research Encourage Award for Young Researchers</h3><p>The Operations Research Society of Japan.</p></div></div>
           <div class="cv-entry"><div class="date">12/2025</div><div><h3>Digital Innovation R&amp;D Technology Award — 3rd Prize</h3><p>Hitachi, Ltd., Research &amp; Development Group.</p></div></div>
           <div class="cv-entry"><div class="date">12/2024</div><div><h3>Year-end Internal Award</h3><p>Hitachi, Ltd., Digital Systems &amp; Services Department.</p></div></div>
           <div class="cv-entry"><div class="date">05/2024</div><div><h3>Paper Award</h3><p>Special Interest Group of Queueing Theory, The Operations Research Society of Japan.</p></div></div>
@@ -743,20 +743,28 @@ def build_cases() -> None:
         "inventory-optimization",
         case_type="Applied research · Manufacturing & inventory",
         title="Inventory optimization at scale",
-        lead="A heterogeneous portfolio of items creates a portfolio-level decision: which model should govern each item when the total inventory budget is limited?",
-        meta=["Industrial research + public conference paper", "Multi-item inventory", "Scalable optimization"],
+        lead="Choose the right safety-stock model for each item without losing control of the portfolio budget. In a published evaluation on 2,500 items, the optimization completed in 2.32 seconds while satisfying a ¥800 million cap.",
+        meta=["2,500-item real-world dataset", "Binary optimization · SOS1", "IEEE CASE 2025"],
         current="projects",
         copy="""
-          <h2>Context</h2><p>Large inventory systems contain items with different demand behavior, lead times, costs, and service requirements. A single safety-stock rule can be too crude, but selecting a bespoke model for every item can create a difficult combinatorial problem.</p>
-          <h2>Decision challenge</h2><p>The item-level decision and portfolio-level budget are coupled. Improving one item’s service level consumes resources that are unavailable elsewhere, so model selection itself becomes part of the optimization.</p>
-          <h2>My contribution</h2><p>I worked on mathematical formulation, scalable optimization, and evaluation of a framework that selects safety-stock logic across many items under a shared budget constraint.</p>
-          <h2>Approach</h2><ul><li>Represent candidate inventory models and their item-level consequences.</li><li>Link model choice to portfolio-level resource constraints.</li><li>Design a computationally scalable selection framework.</li><li>Evaluate trade-offs between cost, availability, and heterogeneous item behavior.</li></ul>
-          <h2>Public artifact</h2><p>A methodological version of the work was presented at IEEE CASE 2025. Industrial data, client context, implementation details, and non-public performance results remain omitted.</p>
+          <h2>Context</h2><p>Large inventory systems contain items with very different demand patterns, lead times, prices, and service requirements. Applying one safety-stock formula to every item is easy to operate but can be inaccurate: a conservative rule ties up working capital, while an aggressive rule creates shortages and urgent recovery work.</p>
+          <h2>Decision challenge</h2><p>The item-level and portfolio-level decisions are coupled. Giving one item more safety stock consumes budget that could protect another, so the problem is not only how much stock to hold—it is also which inventory model should govern each item.</p>
+          <h2>My contribution</h2><p>I worked on the mathematical formulation, scalable solution method, and empirical evaluation of Safety Stock Model Selection Optimization (SSMSO). The framework compares several candidate safety-stock models for every item, then selects exactly one model per item while enforcing a shared budget.</p>
+
+          <h2>Why the approach is fast</h2><ul><li><strong>Precompute, then select.</strong> Each candidate model first produces an item-level safety-stock quantity and a historical performance score. The portfolio optimizer then chooses among these fixed alternatives instead of repeatedly simulating the entire inventory system.</li><li><strong>Use a linear binary formulation.</strong> The selection and budget constraints form a binary integer linear program with special ordered set constraints. This lets mature solvers use specialized branching and cutting methods.</li><li><strong>Avoid nonlinear search at scale.</strong> The benchmark nonlinear approaches repeatedly approximate gradients and evaluate objectives and constraints; their runtime grows rapidly and convergence can become difficult as the item count reaches the thousands.</li></ul>
+
+          <h2>Why decision quality improves</h2><p>The method does not claim to improve demand-forecast accuracy. It improves the safety-stock decision by allowing different items to use different models and by evaluating whether historical protection has enough margin to remain useful when demand changes.</p><ul><li><strong>Model diversity:</strong> the public evaluation combines five candidates, including an MRP-based rule, normal-demand formulas, and empirical distribution-free formulas.</li><li><strong>Margin-aware scoring:</strong> models that merely tie at a 100% historical win rate are separated by how much additional demand they could absorb before a shortage.</li><li><strong>Diminishing returns:</strong> a root-margin score rewards useful protection but discounts excessive stock, leaving budget available for items where it reduces shortage risk more effectively.</li></ul>
+
+          <h2>Published practical results</h2><div class="callout"><strong>2,500 items optimized in 2.32 seconds.</strong> One nonlinear comparison method did not converge, while another was still running when the 12-hour test limit was reached.</div><p>The three-month retrospective evaluation used real-world semiconductor inventory data, five candidate models, a 12-month historical window, and a ¥800 million safety-stock budget. Compared with the tailored MRP-based benchmark, the root-margin version of SSMSO achieved:</p><ul><li><strong>50–60% fewer shortage-affected items per month</strong>—the counts changed from 183 to 91, 111 to 55, and 121 to 49.</li><li><strong>51–64% lower adjusted shortage rates</strong> across the three monthly evaluation periods.</li><li><strong>¥210–220 million less safety-stock value per month</strong>, reducing budget-in-use from ¥1.01–1.02 billion to the ¥800 million limit.</li><li><strong>About 800× faster optimization at 1,000 items</strong>: 1.72 seconds versus 23 minutes for one nonlinear benchmark.</li></ul>
+
+          <h2>Evidence boundary</h2><p>These figures are results from the public paper’s retrospective evaluation, not a live production A/B test. The adjusted shortage rate is a proxy for inventory performance, and non-public deployment details and operational metrics are not disclosed.</p>
+          <h2>Public artifact</h2><p>The method and evaluation appear in “Safety Stock Model Selection Optimization for Budget-Constrained Multi-Item Inventory Management: A Scalable Framework,” presented at IEEE CASE 2025. <a href="https://doi.org/10.1109/CASE58245.2025.11163776">DOI ↗</a></p>
         """,
         aside="""
-          <div class="aside-card"><h3>Methods</h3><ul><li>Inventory modeling</li><li>Model selection</li><li>Budget constraints</li><li>Scalable optimization</li></ul></div>
-          <div class="aside-card"><h3>Public paper</h3><p>“Safety Stock Model Selection Optimization for Budget-Constrained Multi-Item Inventory Management: A Scalable Framework,” IEEE CASE 2025.</p></div>
-          <div class="aside-card"><h3>Disclosure</h3><p>The case study combines a public method description with a deliberately generalized industrial context.</p></div>
+          <div class="aside-card"><h3>Evaluation at a glance</h3><ul><li>2,500 semiconductor items</li><li>5 candidate models</li><li>3 monthly evaluation periods</li><li>¥800 million budget cap</li><li>2.32-second solve time</li></ul></div>
+          <div class="aside-card"><h3>Versus MRP benchmark</h3><ul><li>50–60% fewer shortage items</li><li>51–64% lower adjusted shortage rate</li><li>¥210–220 million lower stock value</li></ul></div>
+          <div class="aside-card"><h3>Methods</h3><ul><li>Inventory modeling</li><li>Model selection</li><li>Binary linear optimization</li><li>SOS1 constraints</li><li>Root-margin win rate</li></ul></div>
+          <div class="aside-card"><h3>Evidence scope</h3><p>Published retrospective evaluation. Proprietary implementation details and non-public operational results are omitted.</p></div>
         """,
     )
 
