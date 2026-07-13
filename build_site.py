@@ -311,7 +311,9 @@ def build_home() -> None:
         <h2>Selected Applied Research</h2>
         <p class="section-note">Industrial work is described at a deliberately high level. Client identities, proprietary data, operational parameters, and non-public performance results are not disclosed.</p>
         <div class="two-column-list">
+          <!-- Reservoir operations is hidden for now; retain the entry for possible future use.
           <div class="simple-entry"><h3><a href="/work/reservoir-operations/">Reservoir operations under uncertainty</a></h3><p>Forecasting, simulation, and optimization for multi-objective operational decision support.</p></div>
+          -->
           <div class="simple-entry"><h3><a href="/work/inventory-optimization/">Inventory optimization at scale</a></h3><p>Scalable model selection and optimization for heterogeneous multi-item inventory systems.</p></div>
         </div>
         <p><a href="/projects/">More projects →</a></p>
@@ -382,7 +384,9 @@ def build_research() -> None:
             <div><h3>What I build</h3><p>I translate operational questions into computational frameworks using mathematical optimization, scenario analysis, forecasting, simulation, and reinforcement learning. Applications include inventory, infrastructure operations, traffic safety, manufacturing, and digital services.</p></div>
             <div><h3>Research principle</h3><p>Prediction is an input to decision-making, not the endpoint. I focus on how forecasts enter policies, how errors propagate, which constraints are truly binding, and whether the result remains explainable enough to support action.</p></div>
           </div>
-          <div class="related-links"><a class="related-link" href="/work/inventory-optimization/">Inventory optimization</a><a class="related-link" href="/work/reservoir-operations/">Reservoir operations</a><a class="related-link" href="/work/speed-enforcement/">Traffic safety allocation</a></div>
+          <div class="related-links"><a class="related-link" href="/work/inventory-optimization/">Inventory optimization</a><!-- Reservoir operations link is hidden for now; retain it for possible future use.
+            <a class="related-link" href="/work/reservoir-operations/">Reservoir operations</a>
+            --><a class="related-link" href="/work/speed-enforcement/">Traffic safety allocation</a></div>
         </div>
       </article>
     </div></section>
@@ -799,7 +803,8 @@ def build_404() -> None:
 def build_misc() -> None:
     (ROOT / ".nojekyll").write_text("", encoding="utf-8")
     (ROOT / "robots.txt").write_text("User-agent: *\nAllow: /\nSitemap: https://kuniong.github.io/sitemap.xml\n", encoding="utf-8")
-    urls = ["", "research/", "publications/", "projects/", "teaching/", "experience/", "cv/", "work/passenger-taxi/", "work/supply-demand/", "work/speed-enforcement/", "work/matching-queue/", "work/reservoir-operations/", "work/inventory-optimization/", "work/ecommerce-decision-systems/"]
+    # The Reservoir operations page is retained but intentionally omitted from discovery and the sitemap.
+    urls = ["", "research/", "publications/", "projects/", "teaching/", "experience/", "cv/", "work/passenger-taxi/", "work/supply-demand/", "work/speed-enforcement/", "work/matching-queue/", "work/inventory-optimization/", "work/ecommerce-decision-systems/"]
     sitemap = ['<?xml version="1.0" encoding="UTF-8"?>', '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">']
     sitemap += [f"  <url><loc>https://kuniong.github.io/{u}</loc></url>" for u in urls]
     sitemap.append("</urlset>")
