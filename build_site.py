@@ -109,6 +109,7 @@ PUBLICATIONS = [
         "authors": "Hung Q. Nguyen, I. Suemitsu, I. Akutsu, D. Aimi, and T. Oka",
         "venue": "IEEE CASE 2025",
         "note": "A scalable framework for selecting safety-stock models across many items under an aggregate budget constraint.",
+        "doi": "https://doi.org/10.1109/CASE58245.2025.11163776",
         "detail": "/work/inventory-optimization/",
     },
     {
@@ -119,6 +120,16 @@ PUBLICATIONS = [
         "venue": "EPEW 2022, Lecture Notes in Computer Science 13659",
         "note": "Derives conditional waiting-time measures and a computational loop for equilibrium threshold strategies.",
         "doi": "https://doi.org/10.1007/978-3-031-25049-1_6",
+    },
+    {
+        "year": "2022",
+        "category": "conference",
+        "title": "Queueing Analysis and Nash Equilibria in an Unobservable Taxi-passenger System with Two Types of Passenger",
+        "authors": "Hung Q. Nguyen and Tuan Phung-Duc",
+        "venue": "Proceedings of the 11th International Conference on Operations Research and Enterprise Systems, Volume 1: ICORES, 48–55, ISBN 978-989-758-548-7",
+        "note": "Models an unobservable taxi–passenger system with two passenger types and derives performance measures and Nash equilibrium joining rates.",
+        "doi": "https://doi.org/10.5220/0010825200003117",
+        "pdf": "https://www.scitepress.org/Papers/2022/108252/108252.pdf",
     },
     {
         "year": "2021",
@@ -200,6 +211,7 @@ PUBLICATIONS = [
         "authors": "Hung Q. Nguyen",
         "venue": "Doctoral dissertation, University of Tsukuba",
         "note": "Doctoral work on strategic behavior, equilibria, and system design in matching queues.",
+        "pdf": "https://tsukuba.repo.nii.ac.jp/record/2008106/files/DA010775.pdf",
     },
 ]
 
@@ -276,7 +288,7 @@ def build_home() -> None:
         <div class="interest-list">
           <div class="interest-item"><strong><a href="/research/#behavior">Queueing games and strategic behavior</a></strong><p>Equilibrium behavior, externalities, information, and system design when users react to congestion.</p></div>
           <div class="interest-item"><strong><a href="/research/#stochastic">Stochastic service systems</a></strong><p>Performance analysis of queues and matching systems, with emphasis on waiting, reliability, and uncertain system dynamics.</p></div>
-          <div class="interest-item"><strong><a href="/research/#decisions">Optimization and decision support</a></strong><p>Mathematical optimization, simulation, forecasting, and learning methods for operational decisions in real systems.</p></div>
+          <div class="interest-item"><strong><a href="/research/#decisions">Optimization and decision support</a></strong><p>Mathematical optimization, simulation, forecasting, reinforcement learning, and other learning methods for operational decisions in real systems.</p></div>
         </div>
       </div>
     </section>
@@ -396,6 +408,8 @@ def build_publications() -> None:
                 links.append(f'<a href="{p["detail"]}">Research story ↗</a>')
             if p.get("doi"):
                 links.append(f'<a href="{p["doi"]}" target="_blank" rel="noopener">DOI ↗</a>')
+            if p.get("pdf"):
+                links.append(f'<a href="{p["pdf"]}" target="_blank" rel="noopener">PDF ↗</a>')
             links_html = f'              <div class="pub-links">{"".join(links)}</div>' if links else ""
             publication_number = len(papers) - index
             year_html = ""
@@ -571,12 +585,18 @@ def build_cv() -> None:
           <div class="cv-entry"><div class="date">04/2023 — present</div><div><h3>Researcher, Hitachi, Ltd.</h3><div class="cv-affiliation">Advanced AI Innovation Center, Social Intelligence Research Department</div><p>Research and development in AI, operations research, mathematical optimization, forecasting, and data analysis.</p></div></div>
         </section>
         <section class="cv-section"><h2>Education</h2>
-          <div class="cv-entry"><div class="date">04/2020 — 03/2023</div><div><h3>Ph.D. in <a href="https://www.sk.tsukuba.ac.jp/PPS/en/">Policy and Planning Sciences</a>, University of Tsukuba</h3><p><a href="http://sk.tsukuba.ac.jp/~tuan/lab/en/index.html">Applied Stochastic Systems Laboratory</a>, supervised by Professor Tuan Phung-Duc.<br>Dissertation: <em>Agent behaviors and optimal designs in double-ended queueing systems.</em></p></div></div>
+          <div class="cv-entry"><div class="date">04/2020 — 03/2023</div><div><h3>Ph.D. in <a href="https://www.sk.tsukuba.ac.jp/PPS/en/">Policy and Planning Sciences</a>, University of Tsukuba</h3><p><a href="http://sk.tsukuba.ac.jp/~tuan/lab/en/index.html">Applied Stochastic Systems Laboratory</a>, supervised by Professor <a href="http://sk.tsukuba.ac.jp/~tuan/">Tuan Phung-Duc</a>.<br>Dissertation: <em>Agent behaviors and optimal designs in double-ended queueing systems.</em></p></div></div>
           <div class="cv-entry"><div class="date">10/2017 — 09/2019</div><div><h3>M.A. in Economics, Tohoku University</h3><p>Graduate School of Economics and Management, Data Science Program.</p></div></div>
           <div class="cv-entry"><div class="date">08/2012 — 02/2017</div><div><h3>B.A. in Economics &amp; International Business, Foreign Trade University</h3><p>Graduated in the top 1% of the cohort.</p></div></div>
         </section>
         <section class="cv-section"><h2>Selected publications</h2>
-          <ol class="cv-list"><li>Nguyen, H. Q. (2026). Learning to allocate automated speed enforcement. <em>Case Studies on Transport Policy</em>.</li><li>Nguyen, H. Q., &amp; Phung-Duc, T. (2025). Subgame perfect Nash equilibrium analysis in a two-population strategic matching queue. <em>Operations Research Letters</em>.</li><li>Nguyen, H. Q., &amp; Phung-Duc, T. (2022). Strategic customer behavior and optimal policies in a passenger–taxi double-ended queueing system. <em>Queueing Systems</em>.</li><li>Nguyen, H. Q., &amp; Phung-Duc, T. (2022). Supply–demand equilibria and multivariate optimization of social welfare. <em>Computers &amp; Industrial Engineering</em>.</li><li>Nguyen, H. Q., &amp; Phung-Duc, T. (2022). A two-population game in observable double-ended queueing systems. <em>Operations Research Letters</em>.</li></ol>
+          <ol class="cv-list">
+            <li>Hung Q. Nguyen (2026). Learning to allocate automated speed enforcement: An observational policy optimization framework with reinforcement learning. <em>Case Studies on Transport Policy</em>, <strong>25</strong>, 101855. <a href="https://doi.org/10.1016/j.cstp.2026.101855">doi:10.1016/j.cstp.2026.101855</a>.</li>
+            <li>Hung Q. Nguyen and <a href="http://sk.tsukuba.ac.jp/~tuan/">Tuan Phung-Duc</a> (2025). Subgame perfect Nash equilibrium analysis in a two-population strategic matching queue with nonzero matching times. <em>Operations Research Letters</em>, <strong>63</strong>, 107362. <a href="https://doi.org/10.1016/j.orl.2025.107362">doi:10.1016/j.orl.2025.107362</a>.</li>
+            <li>Hung Q. Nguyen and <a href="http://sk.tsukuba.ac.jp/~tuan/">Tuan Phung-Duc</a> (2022). Strategic customer behavior and optimal policies in a passenger–taxi double-ended queueing system with multiple access points and nonzero matching times. <em>Queueing Systems</em>, <strong>102</strong>, 481–508. <a href="https://doi.org/10.1007/s11134-022-09786-3">doi:10.1007/s11134-022-09786-3</a>.</li>
+            <li>Hung Q. Nguyen and <a href="http://sk.tsukuba.ac.jp/~tuan/">Tuan Phung-Duc</a> (2022). Supply–demand equilibria and multivariate optimization of social welfare in double-ended queueing systems. <em>Computers &amp; Industrial Engineering</em>, <strong>170</strong>, 108306. <a href="https://doi.org/10.1016/j.cie.2022.108306">doi:10.1016/j.cie.2022.108306</a>.</li>
+            <li>Hung Q. Nguyen and <a href="http://sk.tsukuba.ac.jp/~tuan/">Tuan Phung-Duc</a> (2022). A two-population game in observable double-ended queueing systems. <em>Operations Research Letters</em>, <strong>50</strong>(4), 407–414. <a href="https://doi.org/10.1016/j.orl.2022.05.004">doi:10.1016/j.orl.2022.05.004</a>.</li>
+          </ol>
           <div class="pub-links"><a href="/publications/">Complete publication list ↗</a></div>
         </section>
         <section class="cv-section"><h2>Awards</h2>
@@ -594,13 +614,15 @@ def build_cv() -> None:
         <section class="cv-section"><h2>Peer-review activities</h2>
           <div class="cv-entry"><div class="date">Journals</div><div><ul class="cv-list"><li>Discover Computing</li><li>INFOR</li><li>Mathematics and Computers in Simulation</li><li>Methodology and Computing in Applied Probability</li><li>Omega</li><li>Queueing Models and Service Management</li><li>Queueing Systems</li><li>Scientific Reports</li></ul></div></div>
         </section>
+        <!-- Languages section hidden for now; retain it for possible future use.
         <section class="cv-section"><h2>Languages</h2>
           <div class="language-grid"><div class="language-item"><strong>Vietnamese</strong><span>Native</span></div><div class="language-item"><strong>English</strong><span>Business level</span></div><div class="language-item"><strong>Japanese</strong><span>Nearly business level</span></div></div>
         </section>
+        -->
       </div>
     </div></section>
     """
-    render("cv", title="CV — Hung Q. Nguyen", description="Web curriculum vitae for Hung Q. Nguyen: research, education, appointments, publications, awards, funding, peer-review activities, and languages.", current="cv", body=body, body_class="cv-page")
+    render("cv", title="CV — Hung Q. Nguyen", description="Web curriculum vitae for Hung Q. Nguyen: research, education, appointments, publications, awards, funding, and peer-review activities.", current="cv", body=body, body_class="cv-page")
 
 
 def case_page(slug: str, *, case_type: str, title: str, lead: str, meta: list[str], copy: str, aside: str, current: str) -> None:
