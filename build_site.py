@@ -270,7 +270,7 @@ def build_home() -> None:
           <a href="https://github.com/kuniong">GitHub</a>
           <a href="/cv/">CV</a>
         </div>
-        <div class="updated">Last updated: July 2026</div>
+        <div class="updated"><strong>Personal website notice:</strong> All statements and opinions expressed on this website are my own. They do not represent the official views of my employer or any affiliated organization.<br>Last updated: July 2026</div>
       </div>
     </section>
 
@@ -469,12 +469,12 @@ def build_projects() -> None:
     body = page_hero(
         "Projects",
         "Projects",
-        "Selected applied and industrial research. The descriptions show the decision problem, my role, and the methodology without disclosing confidential implementation details.",
+        "Project descriptions are currently hidden.",
     )
     body += """
+    <!-- Project content is hidden for now; retain it for possible future use.
     <section class="section compact"><div class="container">
       <div class="project-grid">
-        <!-- Reservoir operations is hidden for now; retain the card for possible future use.
         <a class="project-card" href="/work/reservoir-operations/">
           <div class="work-type">Infrastructure · Optimization · Forecasting</div>
           <h2>Reservoir operations under uncertainty</h2>
@@ -482,7 +482,6 @@ def build_projects() -> None:
           <div class="tags"><span class="tag">Simulation</span><span class="tag">Optimization</span><span class="tag">Time series</span></div>
           <div class="project-footer"><span class="work-link">Read case study ↗</span><span class="confidential">Sanitized industrial project</span></div>
         </a>
-        -->
         <a class="project-card" href="/work/inventory-optimization/">
           <div class="work-type">Manufacturing · Inventory · Scalable optimization</div>
           <h2>Inventory optimization at scale</h2>
@@ -500,8 +499,9 @@ def build_projects() -> None:
       </div>
     </div></section>
     <section class="section compact"><div class="container"><div class="disclosure-box"><h2>My disclosure rule</h2><p>A technically sophisticated reader should be able to understand why the work was difficult, what I contributed, and which capabilities it demonstrates—but not be able to reconstruct a client’s data, operating logic, proprietary implementation, or business performance. Where public papers or patents exist, the site links to those public artifacts instead of reproducing internal details.</p></div></div></section>
+    -->
     """
-    render("projects", title="Projects — Hung Q. Nguyen", description="Selected applied research projects in inventory optimization and e-commerce decision systems, presented at a confidentiality-safe level.", current="projects", body=body)
+    render("projects", title="Projects — Hung Q. Nguyen", description="Project descriptions are currently hidden.", current="projects", body=body)
 
 
 def build_experience() -> None:
