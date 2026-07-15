@@ -103,6 +103,14 @@ PUBLICATIONS = [
         "doi": "https://doi.org/10.1016/j.orl.2022.05.004",
     },
     {
+        "year": "2026",
+        "category": "conference",
+        "title": "Facial Recognition Ticket Gates in Railway Stations: A Queueing Model for Exceptions and Passenger Congestion",
+        "authors": "Huy Q. Nguyen, Hung Q. Nguyen, and Tuan Phung-Duc",
+        "venue": "Proceedings of the Conference on Optimization, Modeling, Simulation, and Analytics (COMOSA 2026), Hanoi, Vietnam, August 7–8, 2026 (to appear)",
+        "note": "Accepted conference paper developing a queueing model for facial-recognition ticket-gate exceptions and passenger congestion.",
+    },
+    {
         "year": "2025",
         "category": "conference selected",
         "title": "Safety Stock Model Selection Optimization for Budget-Constrained Multi-Item Inventory Management: A Scalable Framework",
@@ -325,6 +333,7 @@ def build_home() -> None:
         <h2>News</h2>
         <ul class="news-list">
           <li><span class="news-date">2026.09</span><span>Granted the 16th Research Encourage Award for Young Researchers of the Operations Research Society of Japan.</span></li>
+          <li><span class="news-date">2026.07</span><span>Our paper “Facial Recognition Ticket Gates in Railway Stations: A Queueing Model for Exceptions and Passenger Congestion” was accepted for COMOSA 2026 in Hanoi, Vietnam; proceedings publication forthcoming.</span></li>
           <li><span class="news-date">2026.05</span><span>New paper titled "
 Learning to allocate automated speed enforcement: An observational policy optimization framework with reinforcement learning" published in <em>Case Studies on Transport Policy</em>.</span></li>
           <li><span class="news-date">2025.12</span><span>New paper titled "Subgame perfect Nash equilibrium analysis in a two-population strategic matching queue with nonzero matching times" published in <em>Operations Research Letters</em>.</span></li>
