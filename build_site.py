@@ -297,10 +297,10 @@ def build_home() -> None:
       <div class="container">
         <h2>Selected Publications</h2>
         <ul class="selected-list">
-          <li><div class="item-title"><a href="/work/speed-enforcement/">Learning to allocate automated speed enforcement: An observational policy optimization framework with reinforcement learning</a></div><div class="item-meta">Case Studies on Transport Policy, 2026</div></li>
-          <li><div class="item-title"><a href="/work/matching-queue/">Subgame perfect Nash equilibrium analysis in a two-population strategic matching queue with nonzero matching times</a></div><div class="item-meta">Operations Research Letters, 2025</div></li>
-          <li><div class="item-title"><a href="/work/passenger-taxi/">Strategic customer behavior and optimal policies in a passenger–taxi double-ended queueing system</a></div><div class="item-meta">Queueing Systems, 2022</div></li>
-          <li><div class="item-title"><a href="/work/supply-demand/">Supply–demand equilibria and multivariate optimization of social welfare in double-ended queueing systems</a></div><div class="item-meta">Computers &amp; Industrial Engineering, 2022</div></li>
+          <li><div class="item-title"><a href="/work/speed-enforcement/">Learning to allocate automated speed enforcement: An observational policy optimization framework with reinforcement learning</a></div><div class="item-meta">Case Studies on Transport Policy, 2026 · <a href="/work/speed-enforcement/">Research story ↗</a></div></li>
+          <li><div class="item-title"><a href="/work/matching-queue/">Subgame perfect Nash equilibrium analysis in a two-population strategic matching queue with nonzero matching times</a></div><div class="item-meta">Operations Research Letters, 2025 · <a href="/work/matching-queue/">Research story ↗</a></div></li>
+          <li><div class="item-title"><a href="/work/passenger-taxi/">Strategic customer behavior and optimal policies in a passenger–taxi double-ended queueing system</a></div><div class="item-meta">Queueing Systems, 2022 · <a href="/work/passenger-taxi/">Research story ↗</a></div></li>
+          <li><div class="item-title"><a href="/work/supply-demand/">Supply–demand equilibria and multivariate optimization of social welfare in double-ended queueing systems</a></div><div class="item-meta">Computers &amp; Industrial Engineering, 2022 · <a href="/work/supply-demand/">Research story ↗</a></div></li>
         </ul>
         <p><a href="/publications/">Complete publication list →</a></p>
       </div>
