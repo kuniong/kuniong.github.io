@@ -114,7 +114,7 @@ PUBLICATIONS = [
         "year": "2025",
         "category": "conference selected",
         "title": "Safety Stock Model Selection Optimization for Budget-Constrained Multi-Item Inventory Management: A Scalable Framework",
-        "authors": "Hung Q. Nguyen, I. Suemitsu, I. Akutsu, D. Aimi, and T. Oka",
+        "authors": "Hung Q. Nguyen, Issei Suemitsu, Itoe Akutsu, Daisuke Aimi, and Tsuyoshi Oka",
         "venue": "IEEE CASE 2025",
         "note": "A scalable framework for selecting safety-stock models across many items under an aggregate budget constraint.",
         "doi": "https://doi.org/10.1109/CASE58245.2025.11163776",
@@ -425,16 +425,18 @@ def build_publications() -> None:
                 links.append(f'<a href="{p["pdf"]}" target="_blank" rel="noopener">PDF ↗</a>')
             links_html = f'              <div class="pub-links">{"".join(links)}</div>' if links else ""
             publication_number = len(papers) - index
-            year_html = ""
-            if p["year"] not in p["venue"]:
-                year_html = f' <time class="pub-year" datetime="{p["year"]}">({p["year"]})</time>'
+            year_html = f'<time class="pub-year" datetime="{p["year"]}">{p["year"]}</time>'
+            if p["year"] in p["venue"]:
+                venue_html = p["venue"].replace(p["year"], year_html)
+            else:
+                venue_html = f'{p["venue"]} <time class="pub-year" datetime="{p["year"]}">({p["year"]})</time>'
             cards.append(f"""
           <li class="pub-card" data-category="{p['category']}" data-year="{p['year']}">
             <div class="pub-number" aria-label="Publication {publication_number}">{publication_number}.</div>
             <article class="pub-citation">
               <div class="pub-authors">{p['authors']}</div>
               <h3>{p['title']}</h3>
-              <div class="pub-venue">{p['venue']}{year_html}</div>
+              <div class="pub-venue">{venue_html}</div>
               <div class="pub-note">{p['note']}</div>
 {links_html}
             </article>
