@@ -430,11 +430,15 @@ def build_publications() -> None:
                 venue_html = p["venue"].replace(p["year"], year_html)
             else:
                 venue_html = f'{p["venue"]} <time class="pub-year" datetime="{p["year"]}">({p["year"]})</time>'
+            authors_html = p["authors"].replace(
+                "Hung Q. Nguyen",
+                '<strong class="pub-author-me">Hung Q. Nguyen</strong>',
+            )
             cards.append(f"""
           <li class="pub-card" data-category="{p['category']}" data-year="{p['year']}">
             <div class="pub-number" aria-label="Publication {publication_number}">{publication_number}.</div>
             <article class="pub-citation">
-              <div class="pub-authors">{p['authors']}</div>
+              <div class="pub-authors">{authors_html}</div>
               <h3>{p['title']}</h3>
               <div class="pub-venue">{venue_html}</div>
               <div class="pub-note">{p['note']}</div>
@@ -620,7 +624,7 @@ def build_cv() -> None:
           <div class="cv-entry"><div class="date">12/2024</div><div><h3>Year-end Internal Award</h3><p>Hitachi, Ltd., Digital Systems &amp; Services Department.</p></div></div>
           <div class="cv-entry"><div class="date">05/2024</div><div><h3>Paper Award</h3><p>Special Interest Group of Queueing Theory, The Operations Research Society of Japan.</p></div></div>
           <div class="cv-entry"><div class="date">03/2023</div><div><h3>President’s Award</h3><p>University of Tsukuba.</p></div></div>
-          <div class="cv-entry"><div class="date">03/2023</div><div><h3>Alumni Association Esaki Award</h3><p>University of Tsukuba Alumni Association.</p></div></div>
+          <div class="cv-entry"><div class="date">03/2023</div><div><h3>Alumni Association Ezaki Award</h3><p>University of Tsukuba Alumni Association.</p></div></div>
           <div class="cv-entry"><div class="date">01/2023</div><div><h3>Research Encouragement Award</h3><p>Special Interest Group of Queueing Theory, The Operations Research Society of Japan.</p></div></div>
         </section>
         <section class="cv-section"><h2>Research funding</h2>

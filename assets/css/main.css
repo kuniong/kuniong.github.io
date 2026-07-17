@@ -139,6 +139,7 @@ button { font: inherit; }
 .pub-card h3 { font-family: var(--serif); font-size: 19px; line-height: 1.42; font-weight: 700; margin: 0 0 4px; }
 .pub-authors, .pub-venue, .pub-note { font-size: 14px; }
 .pub-authors { color: var(--body); margin-bottom: 2px; }
+.pub-author-me { color: var(--accent-dark); font-weight: 750; background: linear-gradient(to top, rgba(199,150,93,.24) 0 36%, transparent 36%); padding: 0 .04em; }
 .pub-venue { color: var(--muted); font-style: italic; margin-top: 2px; }
 .pub-note { color: var(--body); margin-top: 8px; max-width: 760px; }
 .pub-links { display: flex; gap: 16px; margin-top: 8px; font-size: 13px; }
