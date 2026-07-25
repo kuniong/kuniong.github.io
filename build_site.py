@@ -628,10 +628,10 @@ def build_cv() -> None:
           <div class="cv-entry"><div class="date">01/2023</div><div><h3>Research Encouragement Award</h3><p>Special Interest Group of Queueing Theory, The Operations Research Society of Japan.</p></div></div>
         </section>
         <section class="cv-section"><h2>Research funding</h2>
-          <div class="cv-entry"><div class="date">2021 — 2023</div><div><h3>JST SPRING doctoral research support</h3><p>Japan Science and Technology Agency / University of Tsukuba.</p></div></div>
+          <div class="cv-entry"><div class="date">2021 — 2023</div><div><h3>JST SPRING</h3><p>Japan Science and Technology Agency / University of Tsukuba.</p></div></div>
         </section>
         <section class="cv-section"><h2>Peer-review activities</h2>
-          <div class="cv-entry"><div class="date">Journals</div><div><ul class="cv-list"><li>Discover Computing</li><li>INFOR</li><li>Mathematics and Computers in Simulation</li><li>Methodology and Computing in Applied Probability</li><li>Omega</li><li>Queueing Models and Service Management</li><li>Queueing Systems</li><li>Scientific Reports</li></ul></div></div>
+          <div class="cv-entry"><div class="date">Journals</div><div><ul class="cv-list"><li>Discover Computing</li><li>INFOR</li><li>Journal of Mathematical Economics</li><li>Mathematics and Computers in Simulation</li><li>Methodology and Computing in Applied Probability</li><li>Omega</li><li>Queueing Models and Service Management</li><li>Queueing Systems</li><li>Scientific Reports</li></ul></div></div>
         </section>
         <!-- Languages section hidden for now; retain it for possible future use.
         <section class="cv-section"><h2>Languages</h2>
