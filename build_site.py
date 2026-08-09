@@ -107,8 +107,9 @@ PUBLICATIONS = [
         "category": "conference",
         "title": "Facial Recognition Ticket Gates in Railway Stations: A Queueing Model for Exceptions and Passenger Congestion",
         "authors": "Huy Q. Nguyen, Hung Q. Nguyen, and Tuan Phung-Duc",
-        "venue": "Proceedings of the Conference on Optimization, Modeling, Simulation, and Analytics (COMOSA 2026), Hanoi, Vietnam, August 7–8, 2026 (to appear)",
-        "note": "Accepted conference paper developing a queueing model for facial-recognition ticket-gate exceptions and passenger congestion.",
+        "venue": "Proceedings of the Conference on Optimization, Modeling, Simulation, and Analytics (COMOSA 2026), Hanoi, Vietnam, August 7–8, 2026",
+        "note": "Shows how failed authentications can turn near-frictionless biometric gates into a congestion bottleneck—and how thresholds, retries, capacity, adoption, and fairness should be planned together.",
+        "detail": "/work/facial-recognition-ticket-gates/",
     },
     {
         "year": "2025",
@@ -737,6 +738,40 @@ def build_cases() -> None:
     )
 
     case_page(
+        "facial-recognition-ticket-gates",
+        case_type="Research story · Queueing systems &amp; biometric operations",
+        title="When frictionless ticket gates fail",
+        lead="A successful facial-recognition passage may feel effortless. The operational challenge begins when recognition fails: retries occupy a gate, unresolved passengers need assistance, and a small exception flow can become a peak-hour queue.",
+        meta=["COMOSA 2026", "Biometric gates · retries · exceptions", "Security · congestion · fairness"],
+        current="research",
+        copy="""
+          <h2>The hidden bottleneck</h2><p>Walk-through facial recognition promises faster, hands-free station access. But nominal scan speed tells only half the story. A failed authentication takes longer than a successful passage, may trigger several immediate retries, and can end with a passenger being sent to staff. At high demand, those failures—not the routine successes—can generate most of the biometric workload.</p>
+          <blockquote>The speed of a successful scan is only part of the capacity story. Failures determine how much recovery capacity the station needs.</blockquote>
+
+          <h2>One policy, three coupled queues</h2><p>The paper models biometric gates, conventional gates, and an exception desk as one connected service system. Passenger groups may differ in biometric adoption, image-acquisition quality, and sensitivity to delay. The recognition threshold and retry limit therefore do more than change accuracy: they determine gate occupation, exception arrivals, waiting, and whether each part of the system remains stable.</p><p>This makes exception demand <em>endogenous</em>. Tightening the recognition threshold can reduce false accepts, but it can also create more false non-matches, retries, and staff interventions. Allowing more retries can keep passengers away from the exception desk, yet block biometric gates for longer.</p>
+
+          <h2>Four decisions that must move together</h2><ul><li><strong>Recognition threshold:</strong> balance security risk against false non-matches, delay, and recovery workload.</li><li><strong>Retry rule:</strong> use a finite limit that reflects actual field reliability; retries move congestion between the gates and the exception desk.</li><li><strong>Capacity:</strong> add gates when ordinary throughput is the bottleneck, but strengthen exception service when authentication failures dominate.</li><li><strong>Adoption:</strong> stage biometric use with the infrastructure mix. Moving everyone to the biometric channel can increase delay if gate and recovery capacity do not grow with it.</li></ul>
+
+          <h2>No universal retry count</h2><p>The numerical results make the need for calibration concrete. In the stylized peak-period experiment, an intermediate threshold and a three-attempt limit minimized the modeled cost. In the public-data-anchored counterfactual, low benchmark error rates made additional retries comparatively inexpensive and moved the preferred retry limit to the top of the tested range. The contrast is the practical result: retry policy should be set from observed acquisition quality and passenger experience, not copied as a universal number.</p>
+
+          <h2>Fairness beyond average waiting time</h2><p>Average delay can hide an important disparity. In the paper's stress test, passengers with more difficult image acquisition were routed to exception handling more than five times as often as the regular class at the most severe tested setting, even though the difference in average delay looked comparatively modest. Monitoring who is repeatedly stopped or redirected is therefore as important as monitoring the mean queue.</p>
+
+          <h2>From a model to station-specific decisions</h2><p>The study anchors its counterfactuals in 44,168 station-hour observations from New York's subway system and biometric operating points from NIST benchmarks. Under the stated baseline assumptions, extra biometric-gate capacity was valuable at the busiest hubs, including Grand Central–42 St and Times Square, but not at the lower-demand stations. The analytical approximation was also checked against discrete-event simulation: it reproduced the main utilization, delay, and stability patterns, while supporting a conservative safety margin near saturation.</p>
+
+          <h2>Operational takeaway</h2><div class="callout"><strong>Design the recovery path at the same time as the fast path.</strong> Thresholds, retry rules, adoption, biometric and conventional gates, and exception staffing form one operating policy. A deployment can appear frictionless for most passengers while still being fragile at the moments—and for the people—when recognition fails.</div>
+
+          <h2>Evidence boundary</h2><div class="disclosure-box"><p>This page independently summarizes the authors' COMOSA 2026 conference paper. Its stylized experiments and public-data-anchored counterfactual are not an empirical evaluation of a live biometric deployment. MTA ridership data are not biometric-gate logs, OMNY share is only a digital-payment adoption proxy, and the biometric operating points come from NIST benchmarks rather than measurements at the modeled stations.</p><p>The numerical findings are scenario-dependent, not universal deployment prescriptions. The study analyzes queueing and operational consequences; privacy, consent, security, accessibility, and governance require separate evaluation.</p></div>
+        """,
+        aside="""
+          <div class="aside-card"><h3>Methods</h3><ul><li>Multiclass queueing</li><li>Finite same-gate retries</li><li>Constrained optimization</li><li>Discrete-event simulation</li></ul></div>
+          <div class="aside-card"><h3>Decision levers</h3><ul><li>Recognition threshold</li><li>Retry limit</li><li>Biometric adoption</li><li>Gate and recovery capacity</li></ul></div>
+          <div class="aside-card"><h3>Evidence</h3><p>Stylized experiments plus a public-data-anchored counterfactual using MTA demand and NIST benchmark operating points.</p></div>
+          <div class="aside-card"><h3>Paper</h3><p>COMOSA 2026<br>Hanoi, Vietnam<br>August 7–8, 2026</p></div>
+          <div class="aside-card"><h3>Research theme</h3><p><a href="/research/#stochastic">Stochastic service systems</a></p></div>
+        """,
+    )
+
+    case_page(
         "reservoir-operations",
         case_type="Sanitized industrial case study · Infrastructure",
         title="Reservoir operations under uncertainty",
@@ -817,7 +852,7 @@ def build_misc() -> None:
     (ROOT / ".nojekyll").write_text("", encoding="utf-8")
     (ROOT / "robots.txt").write_text("User-agent: *\nAllow: /\nSitemap: https://kuniong.github.io/sitemap.xml\n", encoding="utf-8")
     # The Reservoir operations page is retained but intentionally omitted from discovery and the sitemap.
-    urls = ["", "research/", "publications/", "projects/", "teaching/", "experience/", "cv/", "work/passenger-taxi/", "work/supply-demand/", "work/speed-enforcement/", "work/matching-queue/", "work/inventory-optimization/", "work/ecommerce-decision-systems/"]
+    urls = ["", "research/", "publications/", "projects/", "teaching/", "experience/", "cv/", "work/passenger-taxi/", "work/supply-demand/", "work/speed-enforcement/", "work/facial-recognition-ticket-gates/", "work/matching-queue/", "work/inventory-optimization/", "work/ecommerce-decision-systems/"]
     sitemap = ['<?xml version="1.0" encoding="UTF-8"?>', '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">']
     sitemap += [f"  <url><loc>https://kuniong.github.io/{u}</loc></url>" for u in urls]
     sitemap.append("</urlset>")
