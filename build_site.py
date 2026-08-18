@@ -29,6 +29,14 @@ PUBLICATIONS = [
     {
         "year": "2026",
         "category": "journal selected",
+        "title": "Minimax Access Regulation under Strategic Adversarial Arrivals",
+        "authors": "Hung Q. Nguyen",
+        "venue": "International Transactions in Operational Research, 2026",
+        "note": "A new strategic access-regulation model studying adversarial arrivals under minimax objectives.",
+    },
+    {
+        "year": "2026",
+        "category": "journal selected",
         "title": "Learning to allocate automated speed enforcement: An observational policy optimization framework with reinforcement learning",
         "authors": "Hung Q. Nguyen",
         "venue": "Case Studies on Transport Policy, 25, 101855",
