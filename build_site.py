@@ -334,6 +334,7 @@ def build_home() -> None:
         <h2>News</h2>
         <ul class="news-list">
           <li><span class="news-date">2026.09</span><span>Granted the 16th Research Encourage Award for Young Researchers of the Operations Research Society of Japan.</span></li>
+          <li><span class="news-date">2026.08</span><span>New paper titled "Minimax Access Regulation under Strategic Adversarial Arrivals" accepted in <em>International Transactions in Operational Research (ITOR)</em>.</span></li>
           <li><span class="news-date">2026.07</span><span>Our paper “Facial Recognition Ticket Gates in Railway Stations: A Queueing Model for Exceptions and Passenger Congestion” was accepted for COMOSA 2026 in Hanoi, Vietnam; proceedings publication forthcoming.</span></li>
           <li><span class="news-date">2026.05</span><span>New paper titled "
 Learning to allocate automated speed enforcement: An observational policy optimization framework with reinforcement learning" published in <em>Case Studies on Transport Policy</em>.</span></li>

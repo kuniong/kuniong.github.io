@@ -1,0 +1,313 @@
+\documentclass[10pt,a4paper]{article}
+
+% Compile with Tectonic or XeLaTeX/LuaLaTeX. The source is UTF-8.
+\usepackage[a4paper,top=16mm,bottom=17mm,left=17mm,right=17mm]{geometry}
+\usepackage{fontspec}
+\usepackage{microtype}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage{needspace}
+\usepackage{fancyhdr}
+\usepackage{multicol}
+
+\defaultfontfeatures{Ligatures=TeX,Scale=MatchLowercase}
+\setmainfont{Times New Roman}
+\setsansfont{Arial}
+
+\definecolor{Navy}{HTML}{17324D}
+\definecolor{Teal}{HTML}{1F6F78}
+\definecolor{Gold}{HTML}{A57432}
+\definecolor{Ink}{HTML}{222B32}
+\definecolor{Muted}{HTML}{5E6A72}
+\definecolor{Pale}{HTML}{EDF3F3}
+\definecolor{WarmPale}{HTML}{F7F2E9}
+\definecolor{Rule}{HTML}{CBD6D9}
+
+\hypersetup{
+  colorlinks=true,
+  urlcolor=Teal,
+  linkcolor=Navy,
+  pdftitle={Curriculum Vitae — Hung Q. Nguyen},
+  pdfauthor={Hung Q. Nguyen},
+  pdfsubject={Operations Research and Applied AI},
+  pdfkeywords={operations research, queueing theory, stochastic systems, optimization, applied AI}
+}
+\urlstyle{same}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{3.5pt}
+\setlength{\columnsep}{18pt}
+\setcounter{secnumdepth}{0}
+\emergencystretch=1.5em
+
+\titleformat{\section}
+  {\sffamily\bfseries\large\color{Navy}}
+  {}{0pt}{}
+  [\vspace{2pt}{\color{Gold}\titlerule[0.8pt]}]
+\titlespacing*{\section}{0pt}{12pt}{7pt}
+
+\titleformat{\subsection}
+  {\sffamily\bfseries\normalsize\color{Teal}}
+  {}{0pt}{}
+\titlespacing*{\subsection}{0pt}{9pt}{4pt}
+
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0.35pt}
+\fancyfoot[L]{\footnotesize\color{Muted}\sffamily Hung Q. Nguyen · Curriculum Vitae · August 2026}
+\fancyfoot[R]{\footnotesize\color{Muted}\sffamily \thepage}
+
+\newcommand{\contactsep}{\hspace{0.45em}{\color{Gold}\textbullet}\hspace{0.45em}}
+\newcommand{\myname}{\textbf{\textcolor{Teal}{Hung Q. Nguyen}}}
+\newcommand{\papertitle}[1]{\textbf{#1}}
+\newcommand{\doilink}[1]{\href{https://doi.org/#1}{DOI: \nolinkurl{#1}}}
+
+\newcommand{\cventry}[4]{%
+  \Needspace{4\baselineskip}%
+  \begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash\sffamily\bfseries\color{Teal}}p{0.175\textwidth}X@{}}
+    #1 & \textbf{#2} \\
+       & \textit{#3} \\
+       & {\small #4}
+  \end{tabularx}\vspace{5pt}
+}
+
+\newcommand{\awardentry}[3]{%
+  \Needspace{2.8\baselineskip}%
+  \begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash\sffamily\bfseries\color{Teal}}p{0.175\textwidth}X@{}}
+    #1 & \textbf{#2} \\
+       & {\small\color{Muted}#3}
+  \end{tabularx}\vspace{3pt}
+}
+
+\newcommand{\statuslabel}[1]{%
+  \begingroup\setlength{\fboxsep}{3pt}%
+  \colorbox{Pale}{\footnotesize\sffamily\bfseries\color{Teal}#1}%
+  \endgroup
+}
+
+\newcommand{\patententry}[3]{%
+  \item \Needspace{3\baselineskip}\papertitle{#1}\par
+  \vspace{2pt}\statuslabel{#2}\hspace{0.55em}{\small\color{Muted}#3}
+}
+
+\newenvironment{publicationlist}{%
+  \begin{enumerate}[
+    label=\textcolor{Gold}{\bfseries\arabic*.},
+    leftmargin=2.1em,
+    labelsep=0.55em,
+    itemsep=6pt,
+    topsep=2pt,
+    parsep=0pt,
+    partopsep=0pt
+  ]\small
+}{\end{enumerate}}
+
+\begin{document}
+
+% Header
+\begin{minipage}[t]{0.58\textwidth}
+  {\fontsize{25}{28}\selectfont\sffamily\bfseries\color{Navy} Hung Q. Nguyen}\par
+  \vspace{3pt}
+  {\large\sffamily\color{Teal}Researcher in Operations Research and Applied AI}\par
+  \vspace{4pt}
+  {\small\color{Muted}Advanced AI Innovation Center · Social Intelligence Research Department\\
+  Hitachi, Ltd.}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.39\textwidth}
+  \raggedleft\small\sffamily
+  \href{mailto:nguyen.quoc.hung.xu@alumni.tsukuba.ac.jp}{nguyen.quoc.hung.xu@alumni.tsukuba.ac.jp}\\[2pt]
+  \href{https://kuniong.github.io}{kuniong.github.io}\\[2pt]
+  \href{https://scholar.google.com/citations?user=5o4yCtMAAAAJ}{Google Scholar}\contactsep
+  \href{https://orcid.org/0000-0001-8934-0113}{ORCID}
+\end{minipage}
+
+\vspace{7pt}
+{\color{Rule}\rule{\textwidth}{0.6pt}}
+
+\section{Profile}
+\begingroup
+\setlength{\fboxsep}{8pt}
+\noindent\colorbox{Pale}{%
+  \parbox{\dimexpr\textwidth-2\fboxsep\relax}{%
+    \small\color{Ink}
+    Operations research and applied AI researcher working on queueing theory, stochastic service systems, strategic behavior, optimization, forecasting, simulation, and data-driven decision support. My research examines systems in which congestion, limited capacity, uncertainty, and human or organizational decisions interact, with the goal of developing mathematically grounded methods that remain useful in real operations.
+  }%
+}
+\endgroup
+
+\textbf{Research areas:} Queueing games and strategic behavior; stochastic service and matching systems; mathematical optimization; simulation and forecasting; reinforcement learning and machine learning for operational decisions.
+
+\section{Professional Experience}
+\cventry{04/2023--present}
+  {Researcher}
+  {Hitachi, Ltd. — Advanced AI Innovation Center, Social Intelligence Research Department}
+  {Research and development in artificial intelligence, operations research, mathematical optimization, forecasting, and data analysis for operational decision problems.}
+
+\cventry{04/2023--07/2025}
+  {Part-time Lecturer \& Researcher}
+  {VietDevelopers Technology, Ltd. — Remote}
+  {Developed and taught online courses in Foundations of Reinforcement Learning, Mathematical Optimization, and Mathematics for AI. For an e-commerce dynamic-pricing optimization project, designed a deep reinforcement learning model to jointly optimize vendor selection and dynamic-pricing campaigns. Responsibilities included algorithm design, model development, and contribution to a patent application.}
+
+\section{Education}
+\cventry{04/2020--03/2023}
+  {Ph.D. in \href{https://www.sk.tsukuba.ac.jp/PPS/en/}{Policy and Planning Sciences}}
+  {University of Tsukuba, Japan}
+  {\href{http://sk.tsukuba.ac.jp/~tuan/lab/en/index.html}{Applied Stochastic Systems Laboratory}; supervised by Professor \href{http://sk.tsukuba.ac.jp/~tuan/}{Tuan Phung-Duc}. Dissertation: \href{https://tsukuba.repo.nii.ac.jp/record/2008106/files/DA010775.pdf}{\emph{Agent behaviors and optimal designs in double-ended queueing systems}}.}
+
+\cventry{10/2017--09/2019}
+  {M.A. in Economics}
+  {Tohoku University, Japan}
+  {Graduate School of Economics and Management; Data Science Program.}
+
+\cventry{08/2012--02/2017}
+  {B.A. in Economics \& International Business}
+  {Foreign Trade University, Vietnam}
+  {Graduated in the top 1\% of the cohort.}
+
+\Needspace{18\baselineskip}
+\section{Patent Applications and Invention Disclosures}
+\begingroup
+\setlength{\fboxsep}{7pt}
+\noindent\colorbox{WarmPale}{%
+  \parbox{\dimexpr\textwidth-2\fboxsep\relax}{%
+    \footnotesize\color{Muted}
+    Status and jurisdictions are based on the supplied patent summary; application numbers, filing dates, inventor order, assignees, and public links were not available. Entries marked ``Filing planned'' are included in this working draft and should be cleared with the relevant employer or IP representative before external distribution.
+  }%
+}
+\endgroup
+
+\begin{enumerate}[leftmargin=2.1em,label=\textcolor{Gold}{\bfseries\arabic*.},itemsep=7pt,topsep=5pt]
+  \patententry{Prediction System for Estimating Product Retrieval and Sorting Times}{Application filed}{Japan}
+  \patententry{Inventory Optimization}{Applications filed}{Japan and United States}
+  \patententry{System and Method for Stability-Driven Key--Value Cache Management in Large Language Model Serving}{Filing planned}{Japan}
+  \patententry{Method and System for Hydraulic-State Prediction and Quantification of Unmeasured Lateral Contributions Using \mbox{Decomposition Modeling}}{Filing planned}{Japan}
+  \patententry{System and Method for Optimizing Winning-Advertiser Selection in Auctions on E-Commerce Platforms}{Application filed}{Vietnam}
+  \patententry{System and Method for Dynamic Pricing and Seller Selection on E-Commerce Platforms Using Deep Reinforcement Learning}{Application filed}{Vietnam}
+\end{enumerate}
+
+\Needspace{5\baselineskip}
+\section{Manuscripts Under Review}
+Six manuscripts have been submitted to peer-reviewed journals and are currently under review.
+
+\section{Peer-Reviewed Journal Articles}
+\begin{publicationlist}
+  \item \myname{} (\textbf{2026}). \papertitle{Learning to allocate automated speed enforcement: An observational policy optimization framework with reinforcement learning.} \emph{Case Studies on Transport Policy}, \textbf{25}, 101855. \doilink{10.1016/j.cstp.2026.101855}.
+
+  \item \myname{} and Tuan Phung-Duc (\textbf{2025}). \papertitle{Subgame perfect Nash equilibrium analysis in a two-population strategic matching queue with nonzero matching times.} \emph{Operations Research Letters}, \textbf{63}, 107362. \doilink{10.1016/j.orl.2025.107362}.
+
+  \item \myname{} and Tuan Phung-Duc (\textbf{2023}). \papertitle{Performance Analysis and Nash Equilibria in a Taxi-Passenger System with Two Types of Passenger.} \emph{SN Computer Science}, \textbf{4}, Article 73. \doilink{10.1007/s42979-022-01479-1}.
+
+  \item \myname{} and Tuan Phung-Duc (\textbf{2022}). \papertitle{Strategic customer behavior and optimal policies in a passenger--taxi double-ended queueing system with multiple access points and nonzero matching times.} \emph{Queueing Systems}, \textbf{102}, 481--508. \doilink{10.1007/s11134-022-09786-3}.
+
+  \item \myname{} and Tuan Phung-Duc (\textbf{2022}). \papertitle{To wait or not to wait: Strategic behaviors in an observable batch-service queueing system.} \emph{Operations Research Letters}, \textbf{50}(3), 343--346. \doilink{10.1016/j.orl.2022.04.003}.
+
+  \item Evsey Morozov, Sergey Rogozin, \myname{}, and Tuan Phung-Duc (\textbf{2022}). \papertitle{Modified Erlang Loss System for Cognitive Wireless Networks.} \emph{Mathematics}, \textbf{10}(12), 2101. \doilink{10.3390/math10122101}.
+
+  \item \myname{} and Tuan Phung-Duc (\textbf{2022}). \papertitle{Supply--demand equilibria and multivariate optimization of social welfare in double-ended queueing systems.} \emph{Computers \& Industrial Engineering}, \textbf{170}, 108306. \doilink{10.1016/j.cie.2022.108306}.
+
+  \item \myname{} and Tuan Phung-Duc (\textbf{2022}). \papertitle{A two-population game in observable double-ended queueing systems.} \emph{Operations Research Letters}, \textbf{50}(4), 407--414. \doilink{10.1016/j.orl.2022.05.004}.
+\end{publicationlist}
+
+\section{Peer-Reviewed Conference Papers}
+\begin{publicationlist}
+  \item Huy Q. Nguyen, \myname{}, and Tuan Phung-Duc (\textbf{2026}). \papertitle{Facial Recognition Ticket Gates in Railway Stations: A Queueing Model for Exceptions and Passenger Congestion.} \emph{Proceedings of the Conference on Optimization, Modeling, Simulation, and Analytics (COMOSA 2026)}, Hanoi, Vietnam, August 7--8, 2026. Accepted; to appear.
+
+  \item \myname{}, Issei Suemitsu, Itoe Akutsu, Daisuke Aimi, and Tsuyoshi Oka (\textbf{2025}). \papertitle{Safety Stock Model Selection Optimization for Budget-Constrained Multi-Item Inventory Management: A Scalable Framework.} \emph{IEEE CASE 2025}. \doilink{10.1109/CASE58245.2025.11163776}.
+
+  \item \myname{} and Tuan Phung-Duc (\textbf{2023}). \papertitle{M/M/c/Setup Queues: Conditional Mean Waiting Times and a Loop Algorithm to Derive Customer Equilibrium Threshold Strategy.} \emph{EPEW 2022, Lecture Notes in Computer Science}, \textbf{13659}. \doilink{10.1007/978-3-031-25049-1_6}.
+
+  \item \myname{} and Tuan Phung-Duc (\textbf{2022}). \papertitle{Queueing Analysis and Nash Equilibria in an Unobservable Taxi-passenger System with Two Types of Passenger.} \emph{Proceedings of the 11th International Conference on Operations Research and Enterprise Systems}, Vol. 1: ICORES, 48--55. ISBN 978-989-758-548-7. \doilink{10.5220/0010825200003117}; \href{https://www.scitepress.org/Papers/2022/108252/108252.pdf}{PDF}.
+
+  \item \myname{} and Tuan Phung-Duc (\textbf{2021}). \papertitle{Mixture Density Networks as a General Framework for Estimation and Prediction of Waiting Time Distributions in Queueing Systems.} \emph{EPEW/ASMTA 2021, Lecture Notes in Computer Science}, \textbf{13104}. \doilink{10.1007/978-3-030-91825-5_9}.
+\end{publicationlist}
+
+\Needspace{7\baselineskip}
+\section{Other Scholarly Outputs}
+\subsection{Invited Journal Article}
+\begin{publicationlist}
+  \item \myname{} and Tuan Phung-Duc (\textbf{2023}). \papertitle{Strategic behavior in double-ended queues: A multi-population game-theoretic analysis.} \emph{Operations Research: The Science of Management}, \textbf{68}(10), 514--520. Invited article in Japanese.
+\end{publicationlist}
+
+\subsection{International Conference Presentations (Unrefereed)}
+\begin{publicationlist}
+  \item \myname{} and Tuan Phung-Duc (\textbf{2023}). \papertitle{The rational outcome of queueing games: A fixed-point iteration based approach.} 10th International Congress on Industrial and Applied Mathematics (ICIAM), Tokyo, Japan, August 20--25, 2023.
+
+  \item \myname{} and Tuan Phung-Duc (\textbf{2021}). \papertitle{Equilibria of supply and demand in double-ended queueing systems.} 31st European Conference on Operational Research, Athens, Greece, July 11--14, 2021.
+\end{publicationlist}
+
+\subsection{Domestic Conference Papers (Unrefereed)}
+\begin{publicationlist}
+  \item \myname{} and Tuan Phung-Duc (\textbf{2022}). \papertitle{Nash equilibria in two-population queueing game.} Operations Research Society of Japan 2022 Fall Research Meeting Abstracts. In Japanese.
+
+  \item \myname{} and Tuan Phung-Duc (\textbf{2022}). \papertitle{The rational outcome of a two-population game in a matching queue.} Proceedings of the 39th Symposium on Queueing Theory and Its Applications. In Japanese.
+
+  \item \myname{} and Tuan Phung-Duc (\textbf{2021}). \papertitle{Equilibrium behavior in a double-ended queueing system with positive matching times.} Proceedings of the 38th Symposium on Queueing Theory and Its Applications, online. In Japanese.
+
+  \item \myname{} and Tuan Phung-Duc (\textbf{2021}). \papertitle{Customer joining behavior and performance analysis of the airport taxi-passenger queue with two types of customers.} Proceedings of the 37th Symposium on Queueing Theory and Its Applications, online. In Japanese.
+
+  \item \myname{} and Tuan Phung-Duc (\textbf{2021}). \papertitle{Mixture density networks (MDNs) as a general framework for estimation of waiting time distributions in queueing systems: Two case studies.} Proceedings of the 37th Symposium on Queueing Theory and Its Applications, online. In Japanese.
+\end{publicationlist}
+
+\subsection{Doctoral Dissertation}
+\begin{publicationlist}
+  \item \myname{} (\textbf{2023}). \papertitle{Agent behaviors and optimal designs in double-ended queueing systems.} Doctoral dissertation, University of Tsukuba. \href{https://tsukuba.repo.nii.ac.jp/record/2008106/files/DA010775.pdf}{PDF}.
+\end{publicationlist}
+
+\clearpage
+\section{Awards and Recognition}
+\awardentry{09/2026}{16th Research Encourage Award for Young Researchers}{The Operations Research Society of Japan. Selected recipient; award ceremony scheduled for September 2026.}
+\awardentry{12/2025}{Digital Innovation R\&D Technology Award — 3rd Prize}{Hitachi, Ltd., Research \& Development Group.}
+\awardentry{12/2024}{Year-end Internal Award}{Hitachi, Ltd., Digital Systems \& Services Department.}
+\awardentry{05/2024}{Paper Award}{Special Interest Group of Queueing Theory, The Operations Research Society of Japan.}
+\awardentry{03/2023}{President's Award}{University of Tsukuba.}
+\awardentry{03/2023}{Alumni Association Ezaki Award}{University of Tsukuba Alumni Association.}
+\awardentry{01/2023}{Research Encouragement Award}{Special Interest Group of Queueing Theory, The Operations Research Society of Japan.}
+
+\section{Research Funding}
+\cventry{2021--2023}
+  {JST SPRING}
+  {Japan Science and Technology Agency / University of Tsukuba}
+  {Doctoral research support.}
+
+\section{Peer-Review Service}
+\small
+Reviewer for the following journals:
+\begin{multicols}{2}
+\begin{itemize}[leftmargin=1.2em,itemsep=2pt,topsep=3pt]
+  \item \href{https://link.springer.com/journal/10586}{Cluster Computing}
+  \item \href{https://link.springer.com/journal/10791}{Discover Computing}
+  \item \href{https://www.tandfonline.com/journals/tinf20}{INFOR}
+  \item \href{https://onlinelibrary.wiley.com/journal/14753995}{International Transactions in Operational Research}
+  \item \href{https://www.sciencedirect.com/journal/journal-of-mathematical-economics}{Journal of Mathematical Economics}
+  \item \href{https://www.sciencedirect.com/journal/mathematics-and-computers-in-simulation}{Mathematics and Computers in Simulation}
+  \item \href{https://link.springer.com/journal/11009}{Methodology and Computing in Applied Probability}
+  \item \href{https://www.sciencedirect.com/journal/omega}{Omega}
+  \item \href{https://www.sciencedirect.com/journal/performance-evaluation}{Performance Evaluation}
+  \item \href{http://qmsm.nchu.edu.tw/index.php/qmsm}{Queueing Models and Service Management}
+  \item \href{https://link.springer.com/journal/11134}{Queueing Systems}
+  \item \href{https://www.nature.com/srep/}{Scientific Reports}
+  \item \href{https://www.tandfonline.com/journals/ytrl20}{Transportation Letters}
+\end{itemize}
+\end{multicols}
+\normalsize
+
+\section{Language Competencies}
+\begin{tabularx}{\textwidth}{@{}XXX@{}}
+  \textbf{\textcolor{Teal}{Vietnamese}} &
+  \textbf{\textcolor{Teal}{English}} &
+  \textbf{\textcolor{Teal}{Japanese}} \\
+  Native & Business level & Nearly business level
+\end{tabularx}
+
+\vfill
+\begin{center}
+  {\footnotesize\color{Muted}\sffamily Current information and links: \href{https://kuniong.github.io}{kuniong.github.io}}
+\end{center}
+
+\end{document}
