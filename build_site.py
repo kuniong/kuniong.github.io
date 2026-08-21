@@ -31,8 +31,9 @@ PUBLICATIONS = [
         "category": "journal selected",
         "title": "Minimax Access Regulation under Strategic Adversarial Arrivals",
         "authors": "Hung Q. Nguyen",
-        "venue": "International Transactions in Operational Research, 2026",
+        "venue": "International Transactions in Operational Research, 2026 (in press)",
         "note": "A new strategic access-regulation model studying adversarial arrivals under minimax objectives.",
+        "doi": "https://doi.org/10.1111/itor.70255",
     },
     {
         "year": "2026",
