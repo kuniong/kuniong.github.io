@@ -287,7 +287,7 @@ def build_home() -> None:
           <a href="https://github.com/kuniong">GitHub</a>
           <a href="/cv/">CV</a>
         </div>
-        <div class="updated"><strong>Personal website notice:</strong> All statements and opinions expressed on this website are my own. They do not represent the official views of my employer or any affiliated organization.<br>Last updated: July 2026</div>
+        <div class="updated"><strong>Personal website notice:</strong> All statements and opinions expressed on this website are my own. They do not represent the official views of my employer or any affiliated organization.<br>Last updated: November 2026</div>
       </div>
     </section>
 
@@ -341,6 +341,7 @@ def build_home() -> None:
       <div class="container">
         <h2>News</h2>
         <ul class="news-list">
+          <li><span class="news-date">2026.11</span><span>The paper “Opt-In Queue Regulation via Coarse Correlated Equilibrium” has been accepted for publication in <em>European Journal of Operational Research</em>.</span></li>
           <li><span class="news-date">2026.09</span><span>Granted the 16th Research Encourage Award for Young Researchers of the Operations Research Society of Japan.</span></li>
           <li><span class="news-date">2026.08</span><span>New paper titled "Minimax Access Regulation under Strategic Adversarial Arrivals" accepted in <em>International Transactions in Operational Research (ITOR)</em>.</span></li>
           <li><span class="news-date">2026.07</span><span>Our paper “Facial Recognition Ticket Gates in Railway Stations: A Queueing Model for Exceptions and Passenger Congestion” was accepted for COMOSA 2026 in Hanoi, Vietnam; proceedings publication forthcoming.</span></li>
