@@ -33,6 +33,7 @@ PUBLICATIONS = [
         "authors": "Hung Q. Nguyen",
         "venue": "European Journal of Operational Research, 2026 (to appear)",
         "note": "Examines opt-in queue regulation through coarse correlated equilibrium.",
+        "code": "https://github.com/kuniong/coarse_correlated_equilibrium",
     },
     {
         "year": "2026",
@@ -442,6 +443,8 @@ def build_publications() -> None:
                 links.append(f'<a href="{p["doi"]}" target="_blank" rel="noopener">DOI ↗</a>')
             if p.get("pdf"):
                 links.append(f'<a href="{p["pdf"]}" target="_blank" rel="noopener">PDF ↗</a>')
+            if p.get("code"):
+                links.append(f'<a href="{p["code"]}" target="_blank" rel="noopener">Code ↗</a>')
             links_html = f'              <div class="pub-links">{"".join(links)}</div>' if links else ""
             publication_number = len(papers) - index
             year_html = f'<time class="pub-year" datetime="{p["year"]}">{p["year"]}</time>'
