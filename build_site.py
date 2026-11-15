@@ -28,6 +28,14 @@ SOCIAL = {
 PUBLICATIONS = [
     {
         "year": "2026",
+        "category": "journal",
+        "title": "Opt-In Queue Regulation via Coarse Correlated Equilibrium",
+        "authors": "Hung Q. Nguyen",
+        "venue": "European Journal of Operational Research, 2026 (to appear)",
+        "note": "Examines opt-in queue regulation through coarse correlated equilibrium.",
+    },
+    {
+        "year": "2026",
         "category": "journal selected",
         "title": "Minimax Access Regulation under Strategic Adversarial Arrivals",
         "authors": "Hung Q. Nguyen",
